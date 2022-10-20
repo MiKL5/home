@@ -11,7 +11,7 @@
 
 
 >### CE QUI SUIT EST EN JAVASCRIPT  <img align="right" src="src/img/JavaScript.png" alt="JavaScript" title="JavaScript" widht="auto" height="64px">
-[Jeu Snake](https://github.com/MiKL5/Snake)  
+[Jeu Snake](https://mikl5.github.io/Snake/)  
 
 >### CE QUI SUIT EST EN PYTHON 3 <img align="right" src="src/img/Python_logo_and_wordmark.svg" alt="Python 3" title="Python 3" widht="auto" height="64px">
 [Fomration au bases de Python](https://github.com/MiKL5/Python)  
