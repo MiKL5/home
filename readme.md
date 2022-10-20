@@ -3,7 +3,7 @@
 >## Formations à l'AFPA d'Amiens
 
 >>>#### **Formations Technique de bases du développement d'application, Développeur Intégrateur Web et Full-stack**  
-[le dépôt pour ces trpos formations](hhttps://mikl5.github.io/afpaDev)  
+[Le dépôt pour ces trpos formations](hhttps://mikl5.github.io/afpaDev)  
 [Le projet avec Symfony (en fromaiton Développeur Full-stack)](https://github.com/MiKL5/afpaDevSymfony)  
 #### [Formation Concepteur Développeur d'Application](https://github.com/MiKL5/afpaCDA)  
 
@@ -14,4 +14,4 @@
 [Jeu Snake](https://mikl5.github.io/Snake/)  
 
 >### CE QUI SUIT EST EN PYTHON 3 <img align="right" src="src/img/Python_logo_and_wordmark.svg" alt="Python 3" title="Python 3" widht="auto" height="64px">
-[Fomration au bases de Python](https://github.com/MiKL5/Python)  
+[Auto-formation au bases de Python](https://github.com/MiKL5/Python)  
