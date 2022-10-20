@@ -3,7 +3,7 @@
 >## Formations à l'AFPA d'Amiens
 
 >>>#### **Formations Technique de bases du développement d'application, Développeur Intégrateur Web et Full-stack**  
-[le dépôt pour ces trpos formations](https://github.com/MiKL5/afpaDev)  
+[le dépôt pour ces trpos formations](hhttps://mikl5.github.io/afpaDev)  
 [Le projet avec Symfony (en fromaiton Développeur Full-stack)](https://github.com/MiKL5/afpaDevSymfony)  
 #### [Formation Concepteur Développeur d'Application](https://github.com/MiKL5/afpaCDA)  
 
