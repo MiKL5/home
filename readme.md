@@ -1,5 +1,6 @@
 # **Mes travaux**
-> ## **Formations**  
+> ## **Formations**
+
 
 [Formations Technique de bases du développement d'application, Développeur Intégrateur Web et Full-stack](https://github.com/MiKL5/afpaDev)  
 
@@ -16,6 +17,6 @@ ___
 #
 > ### **[Auto-formation au bases de Python](https://github.com/MiKL5/Python)** <img align="right" src="src/img/Python.svg" alt="Python 3" title="Python 3" widht="auto" height="64px">
 #
-> ### **[Aoorentissage de React](https://github.com/MiKL5/React)** <img align="right" src="src/img/react.svg" alt="React.js" title="React.js" widht="auto" height="64px">
+> ### **[Apprentissage de React](https://github.com/MiKL5/React)** <img align="right" src="src/img/react.svg" alt="React.js" title="React.js" widht="auto" height="64px">
 [Apprentissage de React](https://github.com/MiKL5/React)  
 [Projet 1 : To do list](https://mikl5.github.io/reactTodoList/)  
