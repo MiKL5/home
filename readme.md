@@ -1,11 +1,12 @@
 # **Mes travaux**
 > ## **Formations à l'AFPA d'Amiens** <img align="right" src="src/img/Afpa.png" alt="AFPA" title="AFPA" widht="auto" height="64px">  
-[Formations Technique de bases du développement d'application, Développeur Intégrateur Web et Full-stack](https://mikl5.github.io/afpaDev)  
+[Formations Technique de bases du développement d'application, Développeur Intégrateur Web et Full-stack](https://github.com/MiKL5/afpaDev)  
 
 [Projet avec Symfony (en fromaiton Développeur Full-stack)](https://github.com/MiKL5/afpaDevSymfony)  
 
-#### [Formation Concepteur Développeur d'Application](https://github.com/MiKL5/afpaCDA)  
+[Formation Concepteur Développeur d'Application](https://github.com/MiKL5/afpaCDA)  
 
+[Projet (fil rouge) de la formation CDA](https://github.com/MiKL5/greenMusic)
 ___
 > ## **Autres apprentissages** 
 
