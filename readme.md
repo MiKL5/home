@@ -8,6 +8,8 @@
 
 ### Formation Concepteur Développeur d'Application  
 
+[Méthodes Agiles](methodeAgile "Les méthodes Agiles")  
+
 [Projet (fil rouge) de la formation CDA](https://github.com/MiKL5/greenMusic)
 ___
 > ## **Autres apprentissages** 
@@ -18,6 +20,7 @@ ___
 > ### **[Auto-formation au bases de Python](https://github.com/MiKL5/Python)** <img align="right" src="src/img/Python.svg" alt="Python 3" title="Python 3" widht="auto" height="64px">
 
 **[Bases de Python](https://github.com/MiKL5/Python)**   
+
 Mini-projet 1 : [Calculateur de revenu](https://github.com/MiKL5/Python/blob/master/miniProjet)  
 Mini-projet 2 : [Fizz Buzz](https://github.com/MiKL5/Python/blob/master/FizzBuzz)  
 Mini-projet 2 : [Budjet des films](https://github.com/MiKL5/Python/blob/master/filmBudgets)  
