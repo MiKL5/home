@@ -8,7 +8,7 @@
 
 ### Formation Concepteur Développeur d'Application  
 
-[Méthodes Agiles](methodeAgile "Les méthodes Agiles")  
+[Méthodes Agiles](https://github.com/MiKL5/afpaCDA/tree/master/methodeAgile "Les méthodes Agiles")  
 
 [Projet (fil rouge) de la formation CDA](https://github.com/MiKL5/greenMusic)
 ___
