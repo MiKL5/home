@@ -27,5 +27,6 @@
         "tab.activeBorder": "#33ff98",
         "titleBar.border": "#00ff7e"
     },
-    "peacock.color": "#00FF7E"
+    "peacock.color": "#00FF7E",
+    "files.autoSave": "onFocusChange"
 }
