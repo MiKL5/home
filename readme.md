@@ -2,11 +2,11 @@
 > ## **Formations**
 
 
-[Formations Technique de bases du développement d'application, Développeur Intégrateur Web et Full-stack](https://github.com/MiKL5/afpaDev)  
+[Formations Technique de bases du développement d'application, Développeur, Intégrateur Web et Full-stack](https://github.com/MiKL5/afpaDev)  
 
-[Projet avec Symfony (en fromaiton Développeur Full-stack)](https://github.com/MiKL5/afpaDevSymfony)  
+[Projet avec Symfony (en formation Développeur Full-stack)](https://github.com/MiKL5/afpaDevSymfony)  
 
-### Formation Concepteur Développeur d'Application  
+### [Formation Concepteur Développeur d'Application](https://github.com/MiKL5/afpaCDA)  
 
 [Projet (fil rouge) de la formation CDA](https://github.com/MiKL5/greenMusic)
 ___
@@ -15,7 +15,7 @@ ___
 
 > ### **[Jeu Snake en Javascript](https://mikl5.github.io/Snake/)**  <img align="right" src="src/img/JavaScript.png" alt="JavaScript" title="JavaScript" widht="auto" height="64px">
 ___
-> ### **[Auto-formation au bases de Python](https://github.com/MiKL5/Python)** <img align="right" src="src/img/Python.svg" alt="Python 3" title="Python 3" widht="auto" height="64px">
+> ### **[Auto-formation aux bases de Python](https://github.com/MiKL5/Python)** <img align="right" src="src/img/Python.svg" alt="Python 3" title="Python 3" widht="auto" height="64px">
 
 **[Bases de Python](https://github.com/MiKL5/Python)**   
 
