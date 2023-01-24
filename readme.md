@@ -6,7 +6,7 @@
 
 [Projet avec Symfony (en formation Développeur Full-stack)](https://github.com/MiKL5/afpaDevSymfony)  
 
-### [Formation Concepteur Développeur d'Application](https://github.com/MiKL5/afpaCDA)  
+[Formation Concepteur Développeur d'Application](https://github.com/MiKL5/afpaCDA)  
 
 [Projet (fil rouge) de la formation CDA](https://github.com/MiKL5/greenMusic)
 ___
