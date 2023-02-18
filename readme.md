@@ -9,6 +9,8 @@
 [Formation Concepteur Développeur d'Application](https://github.com/MiKL5/afpaCDA)  
 
 [Projet (fil rouge) de la formation CDA](https://github.com/MiKL5/greenMusic)
+
+[Stage de la formation CDA](https://github.com/MiKL5/stageCda)
 ___
 > ## **Autres apprentissages** 
 
@@ -25,5 +27,5 @@ Mini-projet 2 : [Budjet des films](https://github.com/MiKL5/Python/blob/master/f
 
 ___
 > ### **[Apprentissage de React](https://github.com/MiKL5/React)** <img align="right" src="src/img/react.svg" alt="React.js" title="React.js" widht="auto" height="64px">
-[Apprentissage de React](https://github.com/MiKL5/React)  
-[Projet 1 : To do list](https://mikl5.github.io/reactTodoList/)  
+**[Apprentissage de React](https://github.com/MiKL5/React)**  
+Projet 1 : [To do list](https://mikl5.github.io/reactTodoList/)  
