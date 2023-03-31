@@ -15,7 +15,9 @@ ___
 > ## **Autres apprentissages** 
 
 
-> ### **[Jeu Snake en Javascript](https://mikl5.github.io/Snake/)**  <img align="right" src="src/img/JavaScript.png" alt="JavaScript" title="JavaScript" widht="auto" height="64px">
+> ### **Javascript**  <img align="right" src="src/img/JavaScript.png" alt="JavaScript" title="JavaScript" widht="auto" height="64px">
+[Snake ](https://mikl5.github.io/Snake/)  
+[Air Quality ](https://mikl5.github.io/airQuality/)
 ___
 > ### **[Auto-formation aux bases de Python](https://github.com/MiKL5/Python)** <img align="right" src="src/img/Python.svg" alt="Python 3" title="Python 3" widht="auto" height="64px">
 
