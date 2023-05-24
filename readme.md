@@ -14,10 +14,14 @@
 ___
 > ## **Autres apprentissages** 
 
-
 > ### **Javascript**  <img align="right" src="src/img/JavaScript.png" alt="JavaScript" title="JavaScript" widht="auto" height="64px">
 [Snake ](https://mikl5.github.io/Snake/)  
 [Air Quality ](https://mikl5.github.io/airQuality/)  
+___
+> ### **[TypeScript](https://github.com/MiKL5/Typescript "TypeScript")**  <img align="right" src="https://github.com/MiKL5/Typescript/raw/main/Assets/images/Typescript_logo_2020.svg" alt="TypeScript" title="Typecript" widht="auto" height="64px">
+
+Exercice : [Convertir en degré Celcius](https://github.com/MiKL5/Typescript/blob/main/Exercices/1_convertirEnCelsuis "Convertir en degré Celcius")  
+Projet: _wip_
 ___
 > ### **[Auto-formation aux bases de Python](https://github.com/MiKL5/Python)** <img align="right" src="src/img/Python.svg" alt="Python 3" title="Python 3" widht="auto" height="64px">
 
