@@ -29,12 +29,13 @@ Exercice : [Convertir en degré Celcius](https://github.com/MiKL5/Typescript/blo
 ___
 > ### **[Python](https://github.com/MiKL5/Python)** <img align="right" src="src/img/Python.svg" alt="Python 3" title="Python 3" widht="auto" height="64px">
 
-**[Bases de Python](https://github.com/MiKL5/Python)**   
-
 Mini-projet 1 : [Calculateur de revenu](https://github.com/MiKL5/Python/blob/master/miniProjet)  
 Mini-projet 2 : [Fizz Buzz](https://github.com/MiKL5/Python/blob/master/FizzBuzz)  
 Mini-projet 3 : [Budjet des films](https://github.com/MiKL5/Python/blob/master/filmBudgets)  
 Mini-projet 4 : [Validateur de cart de crédit](https://github.com/MiKL5/Python/blob/master/creditCardValidator)  
-Mini-projet 5 : [Liste de lecture](https://github.com/MiKL5/Python/blob/master/bookslist)  
-Mini-projet 6 : [Liste de lecture sauvegardée](https://github.com/MiKL5/Python/blob/master/booklist2 "Liste de lecture sauvegardée dans un fichier CSV")
+Mini-projet 5 : [Calculatrice avec opérations multiples](https://github.com/MiKL5/Python/blob/master/calculator)  
+Mini-projet 6 : [Liste de lecture](https://github.com/MiKL5/Python/blob/master/bookslist)  
+Mini-projet 7 : [Liste de lecture sauvegardée](https://github.com/MiKL5/Python/blob/master/booklist2 "Liste de lecture sauvegardée dans un fichier CSV")  
+Mini-projet 8 : [Bot Discord](https://github.com/MiKL5/Python/blob/master/DocBot "Création d'un simple bot Discord")  
+Mini-projet 9 : [Liste de lecture JSON](https://github.com/MiKL5/Python/blob/master/jsonList)  
 ___
