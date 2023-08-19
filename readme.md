@@ -2,9 +2,9 @@
 > ## **Formations**
 
 
-[Formations Technique de bases du développement d'application, Développeur, Intégrateur Web et Full-stack](https://github.com/MiKL5/afpaDev)  
-[Projet avec Symfony (en formation Développeur Full-stack)](https://github.com/MiKL5/afpaDevSymfony)  
-[Formation Concepteur Développeur d'Application](https://github.com/MiKL5/afpaCDA)  
+[Technique de bases du développement d'application, ― Développeur Intégrateur Web ― Full-stack](https://github.com/MiKL5/afpaDev)  
+[Projet avec Symfony (formation Développeur Full-stack)](https://github.com/MiKL5/afpaDevSymfony)  
+[Concepteur Développeur d'Application](https://github.com/MiKL5/afpaCDA)  
 ___
 > ## **Apprentissage autodidacte** 
 
