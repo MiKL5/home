@@ -6,7 +6,7 @@
 [Projet avec Symfony (en formation Développeur Full-stack)](https://github.com/MiKL5/afpaDevSymfony)  
 [Formation Concepteur Développeur d'Application](https://github.com/MiKL5/afpaCDA)  
 ___
-> ## **Apprentissage en autodidacte** 
+> ## **Apprentissage autodidacte** 
 
 > ### **Javascript**  <img align="right" src="src/img/JavaScript.png" alt="JavaScript" title="JavaScript" widht="auto" height="64px">
 [Snake ](https://mikl5.github.io/Snake/)  
