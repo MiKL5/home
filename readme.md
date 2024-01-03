@@ -9,12 +9,12 @@ ___
 > ## **Apprentissage autodidacte** 
 
 > ### **Javascript**  <img align="right" src="src/img/JavaScript.png" alt="JavaScript" title="JavaScript" widht="auto" height="64px">
-[Snake ](https://mikl5.github.io/Snake/)  
-[Air Quality ](https://mikl5.github.io/airQuality/)  
+[Snake ](https://mikl5.github.io/Snake)  
+[Air Quality ](https://mikl5.github.io/airQuality)  
 
 ___
 > ### **[React](https://github.com/MiKL5/React)** <img align="right" src="src/img/react.svg" alt="React.js" title="React.js" widht="auto" height="64px">
-[To do list](https://mikl5.github.io/reactTodoList/)  
+[To do list](https://mikl5.github.io/reactTodoList)  
 ___
 
 > ### **[React Native](https://github.com/MiKL5/React)** <img align="right" src="https://github.com/MiKL5/React/raw/master/src/images/react-native.png" alt="React.js" title="React.js" widht="auto" height="64px">
@@ -23,7 +23,7 @@ ___
 
 ___
 > ### **[TypeScript](https://github.com/MiKL5/Typescript "TypeScript")**  <img align="right" src="https://github.com/MiKL5/Typescript/raw/main/Assets/images/Typescript_logo_2020.svg" alt="TypeScript" title="Typecript" widht="auto" height="64px">
-
+[Clone de Trello](https://github.com/MiKL5/Typescript/blob/main/Projet/clone)
 <br>
 
 ___
@@ -39,3 +39,4 @@ ___
 [Bot Discord](https://github.com/MiKL5/Python/blob/master/DocBot "Création d'un simple bot Discord")  
 [Liste de lecture JSON](https://github.com/MiKL5/Python/blob/master/jsonList)  
 ___
+> ### **[Intelligence artificielle](https://github.com/MiKL5/artificialIntelligence)** <img align="right" src="#" alt="" title="" widht="auto" height="64px">
