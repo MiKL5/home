@@ -1,7 +1,10 @@
 
 ._.git
 ._.gitignore
+._.idea
+._assets
 ._idea
+._images
 ._index.html
 ._readme.md
 ._src
@@ -25,3 +28,5 @@ old/src/img/Afpa.png
 old/src/img/JavaScript.png
 old/src/img/Python.svg
 old/src/img/react.svg
+assets/icons/._analysisTools.png
+assets/._icons
