@@ -1,9 +1,11 @@
 
 ._.git
 ._.gitignore
-._.vscode
+._idea
+._index.html
 ._readme.md
 ._src
+._.vscode
 .vscode/._settings.json
 src/._img
 src/._styles.css
@@ -11,3 +13,15 @@ src/img/._Afpa.png
 src/img/._JavaScript.png
 src/img/._Python.svg
 src/img/._react.svg
+old/readme.md
+old/src/._img
+old/src/._styles.css
+old/src/styles.css
+old/src/img/._Afpa.png
+old/src/img/._JavaScript.png
+old/src/img/._Python.svg
+old/src/img/._react.svg
+old/src/img/Afpa.png
+old/src/img/JavaScript.png
+old/src/img/Python.svg
+old/src/img/react.svg
