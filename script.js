@@ -45,7 +45,7 @@ dockIcons.forEach(icon => {
         icon.classList.add('animate-bounce-small');
         setTimeout(() => {
             icon.classList.remove('animate-bounce-small');
-        }, 300);
+        }, 300); // Délai réduit à 300ms
     });
 });
 
@@ -80,22 +80,10 @@ contactForm.addEventListener('submit', (e) => {
         setTimeout(() => {
             notification.style.opacity = '0';
             notification.style.transform = 'translateY(-10px)';
-            notification.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            notification.style.transition = 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out';
             setTimeout(() => {
                 notification.remove();
             }, 300);
         }, 3000);
     }, 1500);
-
-    document.getElementById('theme-toggle').addEventListener('click', function () {
-        document.documentElement.classList.toggle('dark');
-
-        // Changer l'icône selon le mode
-        const icon = document.getElementById('theme-icon');
-        if (document.documentElement.classList.contains('dark')) {
-            icon.setAttribute('d', 'M12 2a10 10 0 100 20 10 10 0 000-20z'); // Lune
-        } else {
-            icon.setAttribute('d', 'M12 2a10 10 0 100 20 10 10 0 000-20z'); // Soleil
-        }
-    });
 });

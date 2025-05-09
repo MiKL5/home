@@ -12,7 +12,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#5D5CDE',
+                        primary: '#007AFF',
                         macos: {
                             bg: '#f0f0f0',
                             window: '#ffffff',
@@ -45,8 +45,8 @@
         }
 
         body {
-            background-image: url('assets/images/amenouzume.png');
-            /* Remplacez par le chemin de votre image */
+            background-image: url('assets/images/ai_wide.png');
+            background-position: center;
             background-size: cover;
             background-position: auto;
             background-repeat: no-repeat;
@@ -54,6 +54,17 @@
             height: 100vh;
             /* Hauteur de la fenêtre */
             margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-image: url('assets/images/ai_small1.png');
+                /* Image pour petits écrans */
+                background-size: cover;
+                /* Remplir l'écran */
+                background-position: center;
+                /* Centrer l'image */
+            }
         }
 
         html {
@@ -179,7 +190,7 @@
             height: 25px;
             border-radius: 25px;
             position: fixed;
-            bottom: 20px;
+            top: 23px;
             right: 20px;
             cursor: pointer;
             /* Couleur de fond (ajoutée pour la visibilité) */
@@ -211,7 +222,7 @@
     </style>
 </head>
 
-<body class="bg-macos-bg dark:bg-macos-dark-bg transition-colors duration-300">
+<body class="bg-macos-bg dark:bg-macos-dark-bg transition-colors duration-500">
 
     <!-- Dark Mode Detection -->
     <script>
@@ -227,77 +238,69 @@
         });
     </script>
 
-    <!-- MacOS Dock Navigation (Mobile - Bottom) -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/00 dark:bg-black/00 backdrop-blur-md z-50 flex justify-center p-2 border-t>
-        <div class=" dock-container px-2 py-1 bg-white/30 dark:bg-black/30 backdrop-blur-md rounded-2xl shadow-lg">
-        <a href="#home" class="dock-icon p-1 mx-2">
-            <svg class="w-10 h-10 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"></path>
-            </svg>
-        </a>
-        <a href="#about" class="dock-icon p-1 mx-2">
-            <svg class="w-10 h-10 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
-                </path>
-            </svg>
-        </a>
-        <a href="#skills" class="dock-icon p-1 mx-2">
-            <svg class="w-10 h-10 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M11 21H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h6v18zM13 3v18h6c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-6z">
-                </path>
-            </svg>
-        </a>
-        <a href="#projects" class="dock-icon p-1 mx-2">
-            <svg class="w-10 h-10 text-green-500" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z">
-                </path>
-            </svg>
-        </a>
-        <a href="#contact" class="dock-icon p-1 mx-2">
-            <svg class="w-10 h-10 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
-                </path>
-            </svg>
-        </a>
-    </div>
+    <!-- Droits réservés -->
+    <div class="md:fixed md:bottom-[75px] left-0 right-0 text-center text-white text-sm z-50 relative">
+        <div class="bottom-75 left-0 right-0">
+            © 2023-2025 Mickael. Tous droits réservés.
+        </div>
     </div>
 
-    <!-- MacOS Dock Navigation (Desktop - Left) -->
-    <div class="hidden md:flex desktop-dock">
-        <div class="flex-1"></div>
-        <div
-            class="dock-container mx-auto bg-white/30 dark:bg-black/30 backdrop-blur-md rounded-2xl shadow-lg py-3 my-4">
-            <a href="#home" class="dock-icon p-1 my-2">
-                <svg class="w-10 h-10 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+    <!-- Dock Navigation (Mobile - Bottom) -->
+    <div class=" md:hidden fixed bottom-0 left-0 right-0 backdrop-blur-md z-50 flex justify-center">
+        <div class="dock-container px-2 py-3 bg-white/00 dark:bg-black/00 backdrop-blur-md rounded-2xl shadow-lg">
+            <a href="#home" class="dock-icon p-1 mx-2" alt="Accueil">
+                <svg class="w-10 h-10 text-green-500" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"></path>
                 </svg>
             </a>
-            <a href="#about" class="dock-icon p-1 my-2">
-                <svg class="w-10 h-10 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+            <a href="#about" class="dock-icon p-1 mx-2" alt="A propos de moi">
+                <svg class="w-10 h-10 text-gray-900 dark:text-gray-50" fill="currentColor" viewBox="0 0 24 24">
                     <path
                         d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
                     </path>
                 </svg>
             </a>
-            <a href="#skills" class="dock-icon p-1 my-2">
-                <svg class="w-10 h-10 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+            <a href="#skills" class="dock-icon p-1 mx-2 w-10 h-10">
+                <img src="assets/icons/mortarboard.svg" alt="Les compétences" type="image/svg+xml">
+            </a>
+            <a href="#projects" class="dock-icon p-1 mx-2 w-10 h-10">
+                <img src="assets/icons/project.svg" alt="Les projets" type="image/svg+xml">
+            </a>
+            <a href="#contact" class="dock-icon p-1 mx-2">
+                <svg class="w-10 h-10 text-primary" ait="Me contacter" fill="currentColor" viewBox="0 0 24 24">
                     <path
-                        d="M11 21H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h6v18zM13 3v18h6c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-6z">
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
                     </path>
                 </svg>
             </a>
-            <a href="#projects" class="dock-icon p-1 my-2">
+        </div>
+    </div>
+
+    <!-- Dock Navigation (Desktop - Left) -->
+    <div class="hidden md:flex desktop-dock">
+        <div class="flex-1"></div>
+        <div
+            class="dock-container mx-auto bg-white/30 dark:bg-black/30 backdrop-blur-md rounded-2xl shadow-lg py-3 my-4">
+            <a href="#home" class="dock-icon p-1 my-2" alt="Accueil">
                 <svg class="w-10 h-10 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"></path>
+                </svg>
+            </a>
+            <a href="#about" class="dock-icon p-1 my-2" alt="A propos de moi">
+                <svg class="w-10 h-10 text-gray-900 dark:text-gray-50" fill="currentColor" viewBox="0 0 24 24">
                     <path
-                        d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z">
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
                     </path>
                 </svg>
             </a>
-            <a href="#contact" class="dock-icon p-1 my-2">
-                <svg class="w-10 h-10 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+            <a href="#skills" class="dock-icon p-1 my-2 w-10 h-10">
+                <img src="assets/icons/mortarboard.svg" alt="Les compétences" type="image/svg+xml">
+            </a>
+            <a href="#projects" class="dock-icon p-1 my-2 w-10 h-10">
+                <img src="assets/icons/project.svg" alt="Les projets" type="image/svg+xml">
+            </a>
+            <a href="#contact" class="dock-icon p-1 my-2 alt=" Me contacter">
+                <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 24 24">
                     <path
                         d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
                     </path>
@@ -306,7 +309,7 @@
         </div>
         <div class="flex-1 flex flex-col justify-end">
             <div class="p-3 mb-6">
-                <div id="theme-toggle" class="theme-switch light-mode bg-gray-200 dark:bg-gray-700">
+                <div id="theme-toggle" class="theme-switch light-mode bg-gray-200 dark:bg-gray-700 bg-opacity-90">
                     <div class="theme-switch light-mode bg-gray-300 dark:bg-gray-700">
                         <div class="switch-handle"></div>
                     </div>
@@ -319,8 +322,8 @@
     <div class="main-content pb-20 md:pb-6">
         <!-- Hero Section -->
         <section id="home" class="min-h-screen flex items-center justify-center p-4">
-            <div class="macos-window bg-macos-window dark:bg-macos-dark-window max-w-4xl w-full shadow-2xl">
-                <div class="window-header bg-gray-100 dark:bg-gray-800">
+            <div class="macos-window bg-macos-window dark:bg-macos-dark-window opacity-95 max-w-4xl w-full shadow-2xl">
+                <div class="window-header bg-neutral-200 dark:bg-neutral-900">
                     <div class="window-button close-btn"></div>
                     <div class="window-button minimize-btn"></div>
                     <div class="window-button maximize-btn"></div>
@@ -328,25 +331,29 @@
                 <div class="p-8 md:p-12">
                     <div class="flex flex-col md:flex-row items-center">
                         <div class="<!--md:w-1/2--> mb-10 md:mb-0">
-                            <h1 class="text-4xl md:text-5xl font-bold mb-4 dark:text-gray-50 text-center">Bonjour, je
-                                suis <span class="text-teal-700">Mickael GAILLARD</span></h1>
-                            <h2 class="text-2xl md:text-3xl text-center text-gray-600 dark:text-yellow-300 mb-6">
-                                Actuellement en MBA Big Data, je recherche une alternance</h2>
-                            <p class="text-lg text-justify text-gray-600 dark:text-gray-300 mb-8">Lorem, ipsum dolor sit
-                                amet
-                                consectetur adipisicing elit. Reiciendis quod ratione repudiandae porro iste. Dolore in
-                                rerum amet voluptates quisquam voluptatum explicabo minima soluta mollitia suscipit
-                                distinctio dicta, vero odit.</p>
-                            <div class="flex justify-center space-x-4">
+                            <h1 class="text-3xl md:text-5xl font-bold mb-6 dark:text-gray-50 text-center">Bonjour, je
+                                suis <span class="text-teal-500">Mickael GAILLARD</span></h1>
+                            <h2 class="text-2xl md:text-3xl text-center text-yellow-600 dark:text-yellow-300 mb-6">
+                                Actuellement en MBA Big Data, je recherche une alternance pour septembre</h2>
+                            <p class="text-lg text-justify text-gray-600 dark:text-gray-300 mb-1">Passionné par le Big
+                                Data et l'IA, j'aspire à travailler dans la Data. Mon expérience en développement et
+                                avec à divers projets d'analyse de données, je sais utiliser SQL, T-SQL, Python, Power
+                                BI et
+                                les bases de données NoSQL.</p>
+                            <p class="text-lg text-justify text-gray-600 dark:text-gray-300 mb-10">
+                                Mes projets sur GitHub et l'alternance que je recherche me permettront de développer
+                                davantage ma capacité à transformer les données en solutions innovantes et à contribuer
+                                activement à l'essor de l'IA et de l'ingénierie des données
+                            </p>
+                            <div class="flex justify-center space-x-4 md:space-x-8 lg:space-x-10">
                                 <a href="#contact"
-                                    class="px-6 py-3 border border-indigo-500 dark:border-indigo-500 rounded-lg 
-                                    hover:bg-gray-50 dark:hover:bg-indigo-500 transition-all dark:text-gray-50 hover:dark:text-gray-50 text-gray-900 hover:indigo:500 transition-transform transform md:hover:scale-110 lg:hover:scale-110">Me
+                                    class="px-6 py-3 bg-primary rounded-xl hover:bg-primary  transition-all text-gray-50  transition-transform transform md:hover:scale-110 lg:hover:scale-140">Me
                                     contacter</a>
                                 <a href="#projects"
-                                    class="px-6 py-3 border border-green-900 dark:border-green-500 rounded-lg 
-                                       hover:bg-gray-50 dark:hover:bg-green-500 transition-all dark:text-green-500 hover:dark:text-gray-50 text-green-900 transition-transform transform md:hover:scale-110 lg:hover:scale-110">Mes
+                                    class="px-6 py-3 bg-orange-400 rounded-xl hover:bg-orange-400 transition-all text-gray-50  transition-transform transform md:hover:scale-110 lg:hover:scale-140">Mes
                                     projets</a>
                             </div>
+
                         </div>
                         <!-- <div class="md:w-1/2 flex justify-center">
                             <div
@@ -366,32 +373,31 @@
 
     <!-- About Section -->
     <section id="about" class="min-h-screen flex items-center justify-center p-4 section">
-        <div class="macos-window bg-macos-window dark:bg-macos-dark-window max-w-4xl w-full shadow-2xl">
-            <div class="window-header bg-gray-100 dark:bg-gray-800">
+        <div class="macos-window bg-macos-window dark:bg-macos-dark-window max-w-4xl w-full opacity-95 shadow-2xl">
+            <div class="window-header bg-neutral-200 dark:bg-neutral-900">
                 <div class="window-button close-btn"></div>
                 <div class="window-button minimize-btn"></div>
                 <div class="window-button maximize-btn"></div>
             </div>
             <div class="p-8 md:p-12">
-                <h2 class="text-3xl font-bold mb-10 dark:text-blue-200 text-center">Qui suis-je ?</h2>
+                <h2 class="text-3xl font-bold mb-10 dark:text-gray-50 text-center">Qui suis-je ?</h2>
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-1/2 pr-0 md:pr-8 mb-8 md:mb-0 dark:text-gray-100 text-justify">
-                        <h3 class="text-xl font-semibold mb-4 text-primary dark:text-red-500">Mon parcours</h3>
-                        <p class="mb-3">Actuellement en MBA Big Data pour la rentrée de septembre (rythme 1 semaine
-                            à l’école / 2 semaines en entreprise), je suis à la recherche d’une alternance orientée
+                        <h3 class="text-xl text-center font-semibold mb-4 text-primary">Mon parcours</h3>
+                        <p class="mb-3">Actuellement en MBA Big Data pour la rentrée de septembre au rythme d'1 semaine
+                            à l’école / 2 en entreprise, je suis à la recherche d’une alternance orientée
                             analyse de données ou développement IA. Mon parcours mêle programmation dont Python,
                             data visualisation (Power BI), bases de données (SQL, T-SQL et NoSQL), et traitement de
                             données avec Python (Pandas, Numpy).</p>
-                        <p class="mb-3">J’ai consolidé mes compétences techniques via des formations en
-                            développement, ainsi que
-                            des projets concrets en data analyse.</p>
+                        <p class="mb-3">Je consolide mes compétences techniques via des projets concrets notament en
+                            data analyse.</p>
                         <p>Curieux, rigoureux et autonome je souhaite développer mes compétences en entreprise en
                             contribuant activement à des projets data concrets.</p>
 
                     </div>
                     <div
                         class="md:w-1/2 pl-0 md:pl-8 border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-700 pt-8 md:pt-0">
-                        <h3 class="text-xl font-semibold mb-4 text-primary dark:text-red-500">Formation</h3>
+                        <h3 class="text-xl text-center font-semibold mb-4 text-primary">Formation</h3>
                         <div class="mb-6">
                             <div class="flex justify-between">
                                 <h4 class="font-medium test-primary dark:text-gray-100">Marketing digital et
@@ -410,32 +416,40 @@
                         <div class="mb-6">
                             <div class="flex justify-between">
                                 <h4 class="font-medium dark:text-gray-100">Concepteur Développeur d'Applis</h4>
-                                <span class="text-gray-500 dark:text-gray-400">2022 à 2023</span>
+                                <span class="text-gray-500 dark:text-gray-400">2022-23</span>
                             </div>
                             <p class="text-gray-600 dark:text-gray-300">AFPA</p>
                         </div>
                         <div class="mb-6">
                             <div class="flex justify-between">
                                 <h4 class="font-medium dark:text-gray-100">Développement Full-stack</h4>
-                                <span class="text-gray-500 dark:text-gray-400">2018 - 2021</span>
+                                <span class="text-gray-500 dark:text-gray-400">2018-21</span>
                             </div>
                             <p class="text-gray-600 dark:text-gray-300">AFPA</p>
                         </div>
                         <div>
                             <div class="flex justify-between">
                                 <h4 class="font-medium dark:text-gray-100">Cybersécurité</h4>
-                                <span class="text-gray-500 dark:text-gray-400">2018 à 2022</span>
+                                <span class="text-gray-500 dark:text-gray-400">2018-22</span>
                             </div>
                             <p class="text-gray-600 dark:text-gray-300">Udmey</p>
                         </div><br>
                         <div>
                             <div class="flex justify-between">
                                 <h4 class="font-medium dark:text-gray-100">Préparation d'un BTS SIO SLAM</h4>
-                                <span class="text-gray-500 dark:text-gray-400">2020 à 2022</span>
+                                <span class="text-gray-500 dark:text-gray-400">2020-22</span>
                             </div>
                             <p class="text-gray-600 dark:text-gray-300">CNED</p>
                         </div>
+
                     </div>
+                </div>
+                <div class="flex justify-center mt-8 space-x-4 md:space-x-8 lg:space-x-10">
+                    <a href="static/20250508.pdf"
+                        class="px-6 py-3 rounded-full transition-all text-gray-50 transition-transform transform md:hover:scale-110 lg:hover:scale-150">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" align="center"
+                            width="48" alt="Télécharger le CV">
+                    </a>
                 </div>
             </div>
         </div>
@@ -443,64 +457,128 @@
 
     <!-- Skills Section -->
     <section id="skills" class="min-h-screen flex items-center justify-center p-4 section">
-        <div class="macos-window bg-macos-window dark:bg-macos-dark-window max-w-4xl w-full shadow-2xl">
-            <div class="window-header bg-gray-100 dark:bg-gray-800">
+        <div class="macos-window bg-macos-window dark:bg-macos-dark-window opacity-95 max-w-4xl w-full shadow-2xl">
+            <div class="window-header bg-neutral-200 dark:bg-neutral-900">
                 <div class="window-button close-btn"></div>
                 <div class="window-button minimize-btn"></div>
                 <div class="window-button maximize-btn"></div>
             </div>
             <div class="p-8 md:p-12">
-                <h2 class="text-3xl font-bold mb-10">Mes compétences</h2>
+                <h2 class="text-3xl font-bold mb-10 text-yellow-500 text-center">Mes compétences</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
+                    <div
+                        class="bg-gray-50 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform lg:hover:scale-110">
                         <div class="flex items-center mb-4">
-                            <div class="text-blue-500 mr-3">
-                                <img src="https://img.icons8.com/color/48/000000/database.png" alt="Bases de Données">
+                            <div class="text-blue-500 mr-3 flex-shrink-0">
+                                <img src="assets/icons/analysisTools.png" alt="Analyse de données et visualisation"
+                                    class="h-8 w-8">
                             </div>
-                            <h3 class="text-xl font-semibold">Bases de données</h3>
+                            <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Transformer les
+                                données en
+                                décisions</h3>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">SQL, Transact-SQL, NOSQL</p>
+                        <p class="text-center text-gray-600 dark:text-gray-300 mb-4">Power BI, Excel, Google
+                            Sheets<br>DAX<br><i>Préparation, nettoyage, visualisation, exploration des données</i></p>
                     </div>
 
-                    <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
+                    <div
+                        class="bg-gray-50 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform lg:hover:scale-110">
                         <div class="flex items-center mb-4">
-                            <div class="text-green-500 mr-3">
-                                <img src="assets/icons/analysisTools.png" class="h-8 w-8">
-                            </div>
-                            <h3 class="text-xl font-semibold">Analyse de données</h3>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">PowerBI</p>
-                    </div>
-
-                    <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
-                        <div class="flex items-center mb-4">
-                            <div class="text-pink-500 mr-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                        d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                            <div class="text-orange-500 mr-3 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" class="w-10 h-10">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6c0-1.105 3.134-2 7-2s7 .895 7 2-3.134 2-7 2-7-.895-7-2zM4 6v12c0 1.105 3.134 2 7 2s7-.895 7-2V6m0 4c0 1.105-3.134 2-7 2s-7-.895-7-2m14 4c0 1.105-3.134 2-7 2s-7-.895-7-2" />
                                 </svg>
                             </div>
-                            <h3 class="text-xl font-semibold">UI/UX Design</h3>
+                            <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Gestion et
+                                modélisation de bases de
+                                données
+                            </h3>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Figma, Adobe Express, Adobe XD</p>
-
+                        <p class="text-center text-gray-600 dark:text-gray-300 mb-4">SQL, Transact-SQL, NoSQL<br>SQL
+                            Server,
+                            PostgreSQL, MySQL, MariaDB et MongoDB</p>
                     </div>
 
-                    <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
+                    <div
+                        class="bg-gray-50 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform lg:hover:scale-110">
                         <div class="flex items-center mb-4">
-                            <div class="text-yellow-500 mr-3">
+                            <div class="text-blue-700 mr-3 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1105.18 782.64" class="w-10 h-10">
+                                    <text fill="#3354a1" font-family="monospace" font-size="720" y="602.64"
+                                        x="0">&lt;/&gt;</text>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Programmation
+                                Data</h3>
+                        </div>
+                        <p class="text-center text-gray-600 dark:text-gray-300 mb-4">Python, Pandas, Numpy, Keras,
+                            Jupyter Notebook, Google Colab, PyCharm et VS Code</p>
+                    </div>
+
+                    <div
+                        class="bg-gray-50 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform lg:hover:scale-110">
+                        <div class="flex items-center mb-4">
+                            <div class="text-green-500 mr-3 flex-shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                         d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                                 </svg>
                             </div>
-                            <h3 class="text-xl font-semibold">Outils de développement</h3>
+                            <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Outils de
+                                développement
+                            </h3>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4"></p>
-
+                        <p class="text-center text-gray-600 dark:text-gray-300 mb-4">Visual Studio Code, PyCharm, Web
+                            Storm,
+                            Looping-MCD</p>
                     </div>
+
+                    <div
+                        class="bg-gray-50 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform lg:hover:scale-110">
+                        <div class="flex items-center mb-4">
+                            <div class="text-pink-600 mr-3 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Productivité
+                            </h3>
+                        </div>
+                        <p
+                            class="text-center text-gray-600 dark:text-gray-300 mb-4 md:whitespace-normal whitespace-nowrap">
+                            Evernote, Xmind, Notion, Trello,<br>
+                            Adobe Express, Figma, Adobe XD
+                        </p>
+                    </div>
+
+                    <!-- <div
+                        class="bg-gray-50 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform lg:hover:scale-110">
+                        <div class="flex items-center mb-4">
+                            <div class="text-red-500 mr-3" align="center">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.0" class="h-8 w-8"
+                                    viewBox="0 0 877.000000 1280.000000" preserveAspectRatio="xMidYMid meet">
+                                    <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
+                                        fill="#ef4444" stroke="none">
+                                        <path
+                                            d="M4115 12785 c-659 -72 -1254 -378 -1775 -911 -310 -318 -530 -633 -745 -1069 -329 -667 -501 -1379 -522 -2158 l-6 -239 -26 -10 c-240 -98 -472 -258 -624 -432 -231 -265 -363 -559 -406 -906 -8 -57 -11 -746 -11 -2090 0 -2181 -1 -2123 56 -2378 81 -363 250 -703 508 -1026 97 -122 337 -365 463 -468 654 -540 1524 -902 2493 -1037 320 -45 480 -55 865 -55 385 0 545 10 865 55 969 135 1839 497 2493 1037 126 103 366 346 463 468 258 323 427 663 508 1026 57 255 56 197 56 2378 0 1344 -3 2033 -11 2090 -43 347 -175 641 -406 906 -152 174 -384 334 -624 432 l-26 10 -6 239 c-15 565 -111 1096 -290 1608 -151 433 -378 871 -627 1210 -219 299 -515 595 -805 805 -550 398 -1224 584 -1860 515z m582 -1544 c392 -83 720 -294 994 -638 208 -261 392 -636 495 -1012 85 -309 129 -595 142 -920 l7 -161 -1950 0 -1950 0 7 161 c22 547 142 1046 353 1474 321 651 796 1033 1385 1115 109 15 411 4 517 -19z m-105 -5116 c383 -67 704 -297 887 -637 85 -156 124 -287 143 -477 42 -416 -147 -840 -489 -1097 l-73 -55 0 -570 0 -569 -675 0 -675 0 0 569 0 570 -73 55 c-489 368 -636 1037 -346 1574 181 337 501 568 881 637 100 18 317 18 420 0z" />
+                                    </g>
+                                </svg>
+
+                            </div>
+                            <h3 class="text-xl font-semibold dark:text-gray-100 text-center">Sécurité, éthique &
+                                gouvernance des données</h3>
+                        </div>
+                        <p class="text-center text-gray-600 dark:text-gray-300 mb-4">
+                            Ingénierie sociale, sécurité web, tests d'intrusion<br>
+                            RGPD, IA responsable, écoconception
+                        </p>
+                    </div> -->
+
                 </div>
             </div>
         </div>
@@ -508,72 +586,18 @@
 
     <!-- Projects Section -->
     <section id="projects" class="min-h-screen flex items-center justify-center p-4 section">
-        <div class="macos-window bg-macos-window dark:bg-macos-dark-window max-w-4xl w-full shadow-2xl">
-            <div class="window-header bg-gray-100 dark:bg-gray-800">
+        <div class="macos-window bg-macos-window dark:bg-macos-dark-window opacity-95 max-w-4xl w-full shadow-2xl">
+            <div class="window-header bg-neutral-200 dark:bg-neutral-900">
                 <div class="window-button close-btn"></div>
                 <div class="window-button minimize-btn"></div>
                 <div class="window-button maximize-btn"></div>
             </div>
             <div class="p-8 md:p-12">
-                <h2 class="text-3xl font-bold mb-10">Mes projets</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Projet 1 -->
-                    <div class="bg-gray-50 dark:bg-gray-900 rounded-lg overflow-hidden shadow">
-                        <div class="h-48 bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-gray-400 dark:text-gray-500"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            <!-- Pour une image réelle: <img src="projet1.jpg" alt="Projet 1" class="w-full h-full object-cover"> -->
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Nom du Projet 1</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">Description du projet. Une brève
-                                explication des technologies utilisées et des fonctionnalités principales.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-md text-sm">React</span>
-                                <span
-                                    class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-md text-sm">Node.js</span>
-                                <span
-                                    class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-md text-sm">MongoDB</span>
-                            </div>
-                            <div class="flex space-x-3">
-                                <a href="#" class="text-blue-500 hover:underline">Démo</a>
-                                <a href="#" class="text-blue-500 hover:underline">Code Source</a>
-                            </div>
-                        </div>
-                    </div>
+                <h2 id="projects" class="text-orange-400 text-3xl font-bold mb-10 text-center">Mes projets</h2>
+                <p class="text-gray-900 dark:text-gray-50 text-center italic font-semmibold">Prochainement ...</p>
 
-                    <!-- Projet 2 -->
-                    <div class="bg-gray-50 dark:bg-gray-900 rounded-lg overflow-hidden shadow">
-                        <div class="h-48 bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-gray-400 dark:text-gray-500"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                            </svg>
-                            <!-- Pour une image réelle: <img src="projet2.jpg" alt="Projet 2" class="w-full h-full object-cover"> -->
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Nom du Projet 2</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">Description du projet. Une brève
-                                explication des technologies utilisées et des fonctionnalités principales.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-md text-sm">Vue.js</span>
-                                <span
-                                    class="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-md text-sm">Express</span>
-                                <span
-                                    class="px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded-md text-sm">PostgreSQL</span>
-                            </div>
-                            <div class="flex space-x-3">
-                                <a href="#" class="text-blue-500 hover:underline">Démo</a>
-                                <a href="#" class="text-blue-500 hover:underline">Code Source</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-36">
+                    <!-- Projects -->
                 </div>
             </div>
         </div>
@@ -581,16 +605,16 @@
 
     <!-- Contact Section -->
     <section id="contact" class="min-h-screen flex items-center justify-center p-4 section">
-        <div class="macos-window bg-macos-window dark:bg-macos-dark-window max-w-4xl w-full shadow-2xl">
-            <div class="window-header bg-gray-100 dark:bg-gray-800">
+        <div class="macos-window bg-macos-window dark:bg-macos-dark-window opacity-95 max-w-4xl w-full shadow-2xl">
+            <div class="window-header bg-neutral-200 dark:bg-neutral-900">
                 <div class="window-button close-btn"></div>
                 <div class="window-button minimize-btn"></div>
                 <div class="window-button maximize-btn"></div>
             </div>
-            <div class="p-8 md:p-12">
-                <h2 class="text-3xl font-bold mb-10">Me contacter</h2>
-                <div class="flex flex-col md:flex-row gap-8">
-                    <div class="md:w-1/2">
+            <div class="p-10 md:p-12">
+                <h2 class="text-3xl font-bold mb-10 text-center text-primary">Me contacter</h2>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <!-- <div class="md:w-1/2">
                         <form class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
                             <div class="mb-6">
                                 <label for="name"
@@ -598,30 +622,35 @@
                                     et
                                     Nom</label>
                                 <input type="text" id="name"
-                                    class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 text-base focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white"
+                                    class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 text-base focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transform transition-transform lg:hover:scale-105"
                                     placeholder="Vos prénom et nom">
                             </div>
                             <div class="mb-6">
                                 <label for="email"
                                     class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
                                 <input type="email" id="email"
-                                    class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 text-base focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white"
+                                    class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 text-base focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transform transition-transform lg:hover:scale-105"
                                     placeholder="votre.email@exemple.com">
                             </div>
                             <div class="mb-6">
                                 <label for="message"
                                     class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
                                 <textarea id="message" rows="5"
-                                    class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 text-base focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white"
+                                    class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 text-base focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transform transition-transform lg:hover:scale-105"
                                     placeholder="Votre message..."></textarea>
                             </div>
                             <button type="submit"
-                                class="w-full py-3 px-6 bg-primary text-white rounded-md hover:bg-opacity-90 transition-all shadow-md">Expédier</button>
+                                class="w-full py-3 px-6 bg-primary text-white rounded-md hover:bg-opacity-90 transition-all shadow-md transform transition-transform lg:hover:scale-105"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M2.01 21L23 12 2.01 3 2 9l15 3-15 3 2 15z"/>
+                                  </svg>
+                                J'envoie</button>
                         </form>
-                    </div>
+                    </div> -->
                     <div class="md:w-1/2">
-                        <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg h-full">
-                            <h3 class="text-xl font-semibold mb-6 text-primary">Informations de contact</h3>
+                        <div class="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg h-full">
+                            <h3 class="text-xl font-semibold mb-6 md:mb-8 md:mt-4 text-primary text-center">
+                                Informations de contact
+                            </h3>
                             <div class="space-y-6">
                                 <div class="flex items-start">
                                     <div class="text-blue-500 mr-4">
@@ -632,8 +661,12 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 class="font-medium">Mon e-mail</h4>
-                                        <p class="text-gray-600 dark:text-gray-300">miklgaillard@gmail.com</p>
+                                        <h4
+                                            class="dark:text-gray-50 font-medium transform transition-transform md:hover:scale-110">
+                                            Mon
+                                            e-mail est <span
+                                                class="hover:text-blue-500 lg:hover:font-bold transition-transform lg:hover:scale-130">miklgaillard@gmail.com</span>
+                                        </h4>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
@@ -645,11 +678,16 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 class="font-medium">Mon téléphone</h4>
-                                        <p class="text-gray-600 dark:text-gray-300">+33 6 89 28 67 40</p>
+                                        <h4
+                                            class="dark:text-gray-50 font-medium font-medium transform transition-transform lg:hover:scale-110">
+                                            Mon téléphone est <span
+                                                class="hover:text-blue-500 lg:hover:font-bold transition-transform lg:hover:scale-130">+33
+                                                6 89
+                                                28 67 40</span>
+                                        </h4>
                                     </div>
                                 </div>
-                                <div class="flex items-start">
+                                <!-- <div class="flex items-start">
                                     <div class="text-pink-500 mr-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
@@ -659,16 +697,18 @@
                                                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                         </svg>
                                     </div>
-                                    <div>
-                                        <h4 class="font-medium">Je vie en</h4>
-                                        <p class="text-gray-600 dark:text-gray-300">France</p>
+                                    <div class="flex">
+                                        <h4
+                                            class="dark:text-gray-50 font-medium text-lg transform transition-transform  lg:hover:scale-110">
+                                            Je vis en France</h4>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
-                            <h3 class="text-xl font-semibold mb-4 mt-8 text-primary">Les réseaux</h3>
-                            <div class="flex space-x-4">
+                            <h3 class="text-xl font-semibold mb-4 md:mb-6 mt-8 lg:mt-12 text-primary text-center">
+                                Réseaux</h3>
+                            <div class="flex items-center justify-center space-x-9 mb-6">
                                 <a href="https://www.linkedin.com/in/mikl5/" target="_blank"
-                                    class="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors">
+                                    class="text-gray-600 dark:text-gray-300 hover:fill-blue-500 hover:text-blue-500 transition-colors  font-medium transform transition-transform lg:hover:scale-150">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                         viewBox="0 0 24 24">
                                         <path
@@ -676,21 +716,13 @@
                                     </svg>
                                 </a>
                                 <a href="https://github.com/mikl5/" target="_blank"
-                                    class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors">
+                                    class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors font-medium transform transition-transform lg:hover:scale-150">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                         viewBox="0 0 24 24">
                                         <path
                                             d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                                     </svg>
                                 </a>
-                                <!--<a href="#"
-                                        class="text-gray-600 dark:text-gray-300 hover:text-blue-400 transition-colors">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            fill="currentColor" viewBox="0 0 24 24">
-                                            <path
-                                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                                        </svg>
-                                    </a>-->
                             </div>
                         </div>
                     </div>
@@ -699,30 +731,11 @@
         </div>
     </section>
 
-    <!--<sectuin>
-            <div class="window" id="linkedinWindow">
-                <div class="header">
-                    <span>LinkedIn</span>
-                </div>
-                <div class="content">
-                    <iframe src="https://www.linkedin.com/in/mikl5/" width="100%" height="200" frameborder="0"></iframe>
-                </div>
-            </div>
-
-            <div class="window" id="githubWindow">
-                <div class="header">
-                    <span>GitHub</span>
-                </div>
-                <div class="content">
-                    <iframe src="https://github.com/mikl5/" width="100%" height="200" frameborder="0"></iframe>
-                </div>
-            </div>
-        </sectuin>-->
     </div>
 
     <!-- Mobile Theme Toggle -->
     <div class="md:hidden fixed top-4 right-4 z-50">
-        <div id="mobile-theme-toggle" class="theme-switch light-mode bg-gray-300 dark:bg-gray-750">
+        <div id="mobile-theme-toggle" class="theme-switch light-mode bg-gray-300 dark:bg-gray-900 opacity-50">
             <div class="switch-handle"></div>
         </div>
     </div>
