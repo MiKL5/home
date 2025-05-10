@@ -56,17 +56,6 @@
             margin: 0;
         }
 
-        @media (max-width: 768px) {
-            body {
-                background-image: url('assets/images/ai_small.jpg');
-                /* Image pour petits écrans */
-                background-size: cover;
-                /* Remplir l'écran */
-                background-position: center;
-                /* Centrer l'image */
-            }
-        }
-
         html {
             scroll-behavior: smooth;
         }
@@ -75,7 +64,7 @@
         .section {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition: opacity .5s ease-in-out, transform .5s ease-in-out;
         }
 
         .section.visible {
@@ -85,7 +74,7 @@
 
         /* MacOS Dock Icons */
         .dock-icon {
-            transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1.25);
+            transition: all 0.33s cubic-bezier(0.25, 1, 0.5, 1.25);
             transform-origin: bottom;
         }
 
@@ -103,14 +92,11 @@
         /* Window Style */
         .macos-window {
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             position: relative;
+            border-radius: 12px; /* L'ombre suit les coins arrondis */
         }
 
-        .dark .macos-window {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
 
         .window-header {
             height: 28px;
@@ -139,7 +125,7 @@
         }
 
         /* Desktop/Mobile Dock Position */
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
             .desktop-dock {
                 flex-direction: column;
                 height: 100vh;
@@ -157,7 +143,7 @@
             }
 
             .dock-icon:hover {
-                transform: scale(1.2) translateX(5px);
+                transform: scale(1.3) translateX(5px);
             }
 
             .main-content {
@@ -195,17 +181,23 @@
             cursor: pointer;
             /* Couleur de fond (ajoutée pour la visibilité) */
             background-color: #ccc;
-            /* transition: transform 2.3s ease; */
+            /* transition: transform 2.3s ease-in-out; */
+            z-index: 9999!important;
         }
 
         .switch-handle {
             width: 21px;
             height: 21px;
-            background-color: white;
+            background-color: #fff;
             border-radius: 50%;
             position: absolute;
             top: 2px;
-            transition: transform 0.3s ease;
+            transition: transform .25s ease;
+        }
+
+        /* Style pour le mode sombre (ajouté par JavaScript) */
+        .dark .switch-handle {
+            background-color: #888; /* Couleur du point en mode sombre */
         }
 
         .light-mode .switch-handle {
@@ -217,7 +209,7 @@
         }
 
         #theme-toggle {
-            transition: background-color .5s ease-in-out, transform .5s ease-in-out;
+            transition: background-color 5.5s ease-in-out, transform 5.5s ease-in-out;
         }
     </style>
 </head>
@@ -238,15 +230,16 @@
         });
     </script>
 
-    <!-- Droits réservés -->
-    <div class="md:fixed md:bottom-[75px] left-0 right-0 text-center text-white text-sm z-50 relative">
-        <div class="bottom-75 left-0 right-0">
+    <!-- All rights reserved -->
+    <div class="fixed bottom-[75px] left-0 right-0 text-center text-white">
+        <div>
             © 2025 Mickael GAILLARD. Tous droits réservés.
         </div>
     </div>
 
     <!-- Dock Navigation (Mobile - Bottom) -->
-    <div class=" md:hidden fixed bottom-0 left-0 right-0 backdrop-blur-md z-50 flex justify-center">
+    <div
+        class="hidden sm:flex md:bottom-0 md:fixed md:left-0 md:right-0 lg:hidden fixed bottom-0 left-0 right-0 backdrop-blur-md z-50 flex justify-center">
         <div class="dock-container px-2 py-3 bg-white/00 dark:bg-black/00 backdrop-blur-md rounded-2xl shadow-lg">
             <a href="#home" class="dock-icon p-1 mx-2" alt="Accueil">
                 <svg class="w-10 h-10 text-green-500" fill="currentColor" viewBox="0 0 24 24">
@@ -254,7 +247,7 @@
                 </svg>
             </a>
             <a href="#about" class="dock-icon p-1 mx-2" alt="A propos de moi">
-                <svg class="w-10 h-10 text-gray-900 dark:text-gray-50" fill="currentColor" viewBox="0 0 24 24">
+                <svg class="w-10 h-10 text-gray-400 dark:text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path
                         d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
                     </path>
@@ -277,10 +270,10 @@
     </div>
 
     <!-- Dock Navigation (Desktop - Left) -->
-    <div class="hidden md:flex desktop-dock">
+    <div class="hidden lg:flex desktop-dock bg-blur-3xl bg-opacity-50">
         <div class="flex-1"></div>
         <div
-            class="dock-container mx-auto bg-white/30 dark:bg-black/30 backdrop-blur-md rounded-2xl shadow-lg py-3 my-4">
+            class=" dock-container mx-auto bg-white/30 dark:bg-black/30 backdrop-blur-md rounded-2xl shadow-lg py-3 my-4">
             <a href="#home" class="dock-icon p-1 my-2" alt="Accueil">
                 <svg class="w-10 h-10 text-green-500" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"></path>
@@ -299,7 +292,7 @@
             <!-- <a href="#projects" class="dock-icon p-1 my-2 w-10 h-10">
                 <img src="assets/icons/project.svg" alt="Les projets" type="image/svg+xml">
             </a> -->
-            <a href="#contact" class="dock-icon p-1 my-2 alt=" Me contacter">
+            <a href="#contact" class="dock-icon p-1 my-2" alt="Me contacter">
                 <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 24 24">
                     <path
                         d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
@@ -307,22 +300,24 @@
                 </svg>
             </a>
         </div>
-        <div class="flex-1 flex flex-col justify-end">
-            <div class="p-3 mb-6">
-                <div id="theme-toggle" class="theme-switch light-mode bg-gray-200 dark:bg-gray-700 bg-opacity-90">
+        <!-- centrre le dock à gauche -->
+        <div class="flex-1 flex flex-col justify-end p-3 mb-6">
+        </div>
+    </div>
+
+    <!-- Toggle switch light/dark mmode -->
+    <div id="theme-toggle" class="theme-switch light-mode bg-opacity-90 z-50 opacity-90">
                     <div class="theme-switch light-mode bg-gray-300 dark:bg-gray-700">
                         <div class="switch-handle"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Main Content -->
     <div class="main-content pb-20 md:pb-6">
         <!-- Hero Section -->
         <section id="home" class="min-h-screen flex items-center justify-center p-4">
-            <div class="macos-window bg-macos-window dark:bg-macos-dark-window opacity-95 max-w-4xl w-full shadow-2xl">
+            <div
+                class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-85 transition-opacity duration-500 hover:opacity-100 max-w-4xl w-full">
                 <div class="window-header bg-neutral-200 dark:bg-neutral-900">
                     <div class="window-button close-btn"></div>
                     <div class="window-button minimize-btn"></div>
@@ -331,28 +326,20 @@
                 <div class="p-8 md:p-12">
                     <div class="flex flex-col md:flex-row items-center">
                         <div class="<!--md:w-1/2--> mb-10 md:mb-0">
-                            <h1 class="text-3xl md:text-5xl font-bold mb-6 dark:text-gray-50 text-center">Bonjour, je
-                                suis <span class="text-teal-500">Mickael GAILLARD</span></h1>
-                            <h2 class="text-2xl md:text-3xl text-center text-yellow-600 dark:text-yellow-300 mb-6">
-                                Actuellement en MBA Big Data, je recherche une alternance pour septembre</h2>
-                            <p class="text-lg text-justify text-gray-600 dark:text-gray-300 mb-1">Passionné par le Big
-                                Data et l'IA, j'aspire à travailler dans la Data. Mon expérience en développement et
-                                avec à divers projets d'analyse de données, je sais utiliser SQL, T-SQL, Python, Power
-                                BI et
-                                les bases de données NoSQL.</p>
-                            <p class="text-lg text-justify text-gray-600 dark:text-gray-300 mb-10">
-                                Mes projets sur GitHub et l'alternance que je recherche me permettront de développer
-                                davantage ma capacité à transformer les données en solutions innovantes et à contribuer
-                                activement à l'essor de l'IA et de l'ingénierie des données
-                            </p>
-                            <!-- <div class="flex justify-center space-x-4 md:space-x-8 lg:space-x-10">
+                            <h1 class="text-3xl md:text-5xl font-bold mb-6 text-black dark:text-white text-center">
+                                Bonjour, je suis <span class="text-teal-500">Mickael GAILLARD</span></h1>
+                            <h2 class="text-2xl md:text-3xl text-center text-blue-900 dark:text-amber-300 mb-6">Actuellement en MBA Big Data chez My Digital School, je recherche une alternance pour septembre</h2>
+                            <p class="text-lg text-justify text-black dark:text-white mb-1">Passionné par le Big Data et l'IA, j'aspire à travailler dans la Data. Mon expérience en développement et avec à divers projets d'analyse de données, m'ont appris à utiliser SQL, T-SQL (automatiservia les procédures stockées et les triggers), Power BI (pour nettoyer les données et créer des dashboards), Python et les bases de données NoSQL.</p>
+                            <p class="text-lg text-justify text-black dark:text-white mb-10">Mes projets sur GitHub et l'alternance que je recherche me permettront de développer davantage ma capacité à transformer les données en solutions innovantes et à contribuer activement à l'essor de l'IA et de l'ingénierie des données.</p>
+
+                            <div class="flex justify-center space-x-4 md:space-x-8 lg:space-x-10">
                                 <a href="#contact"
-                                    class="px-6 py-3 bg-primary rounded-xl hover:bg-primary  transition-all text-gray-50  transition-transform transform md:hover:scale-110 lg:hover:scale-140">Me
-                                    contacter</a>
-                                <a href="#projects"
+                                    class="px-6 py-3 bg-primary rounded-xl hover:bg-primary  transition-all text-white  transition-transform transform md:hover:scale-110 lg:hover:scale-140">Me contacter</a>
+                                <!-- <a href="#projects"
                                     class="px-6 py-3 bg-orange-400 rounded-xl hover:bg-orange-400 transition-all text-gray-50  transition-transform transform md:hover:scale-110 lg:hover:scale-140">Mes
-                                    projets</a>
-                            </div> -->
+                                    projets</a> -->
+                                <a target="_blank" href="https://github.com/MiKL5/"class="px-6 py-3 bg-slate-600 rounded-xl hover:bg-slate-600 transition-all text-white  transition-transform transform md:hover:scale-110 lg:hover:scale-140">Voir mes projets</a>
+                            </div>
 
                         </div>
                         <!-- <div class="md:w-1/2 flex justify-center">
@@ -373,7 +360,8 @@
 
     <!-- About Section -->
     <section id="about" class="min-h-screen flex items-center justify-center p-4 section">
-        <div class="macos-window bg-macos-window dark:bg-macos-dark-window max-w-4xl w-full opacity-95 shadow-2xl">
+        <div
+            class="macos-window bg-macos-window dark:bg-macos-dark-window max-w-4xl w-full lg:opacity-85 transition-opacity duration-500 hover:opacity-100 shadow-2xl">
             <div class="window-header bg-neutral-200 dark:bg-neutral-900">
                 <div class="window-button close-btn"></div>
                 <div class="window-button minimize-btn"></div>
@@ -384,15 +372,9 @@
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-1/2 pr-0 md:pr-8 mb-8 md:mb-0 dark:text-gray-100 text-justify">
                         <h3 class="text-xl text-center font-semibold mb-4 text-primary">Mon parcours</h3>
-                        <p class="mb-3">Actuellement en MBA Big Data pour la rentrée de septembre au rythme d'1 semaine
-                            à l’école / 2 en entreprise, je suis à la recherche d’une alternance orientée
-                            analyse de données ou développement IA. Mon parcours mêle programmation dont Python,
-                            data visualisation (Power BI), bases de données (SQL, T-SQL et NoSQL), et traitement de
-                            données avec Python (Pandas, Numpy).</p>
-                        <p class="mb-3">Je consolide mes compétences techniques via des projets concrets notament en
-                            data analyse.</p>
-                        <p>Curieux, rigoureux et autonome je souhaite développer mes compétences en entreprise en
-                            contribuant activement à des projets data concrets.</p>
+                        <p class="mb-3">Actuellement en MBA Big Data pour la rentrée de septembre au rythme d'1 semaine à l’école / 2 en entreprise. Je suis à la recherche d’une alternance orientée analyse de données ou développement IA. Mon parcours mêle programmation dont Python, data visualisation (Power BI), bases de données (SQL, T-SQL et NoSQL), et traitement de données avec Python (Pandas, Numpy).</p>
+                        <p class="mb-3">Je consolide mes compétences techniques via des projets concrets notament en data analyse.</p>
+                        <p>Curieux, rigoureux et autonome je souhaite développer mes compétences en entreprise en contribuant activement à des projets data concrets.</p>
 
                     </div>
                     <div
@@ -457,7 +439,8 @@
 
     <!-- Skills Section -->
     <section id="skills" class="min-h-screen flex items-center justify-center p-4 section">
-        <div class="macos-window bg-macos-window dark:bg-macos-dark-window opacity-95 max-w-4xl w-full shadow-2xl">
+        <div
+            class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-85 transition-opacity duration-500 hover:opacity-100 max-w-4xl w-full shadow-2xl">
             <div class="window-header bg-neutral-200 dark:bg-neutral-900">
                 <div class="window-button close-btn"></div>
                 <div class="window-button minimize-btn"></div>
@@ -586,7 +569,7 @@
 
     <!-- Projects Section -->
     <!-- <section id="projects" class="min-h-screen flex items-center justify-center p-4 section">
-        <div class="macos-window bg-macos-window dark:bg-macos-dark-window opacity-95 max-w-4xl w-full shadow-2xl">
+        <div class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-85 transition-opacity duration-500 hover:opacity-100 max-w-4xl w-full shadow-2xl">
             <div class="window-header bg-neutral-200 dark:bg-neutral-900">
                 <div class="window-button close-btn"></div>
                 <div class="window-button minimize-btn"></div>
@@ -597,7 +580,7 @@
                 <p class="text-gray-900 dark:text-gray-50 text-center italic font-semmibold">Prochainement ...</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-36">
-                    <!-- Projects -->
+                    <!-- Projects 
     </div>
     </div>
     </div>
@@ -605,7 +588,8 @@
 
     <!-- Contact Section -->
     <section id="contact" class="min-h-screen flex items-center justify-center p-4 section">
-        <div class="macos-window bg-macos-window dark:bg-macos-dark-window opacity-95 max-w-4xl w-full shadow-2xl">
+        <div
+            class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-85 transition-opacity duration-500 hover:opacity-100 max-w-4xl w-full shadow-2xl">
             <div class="window-header bg-neutral-200 dark:bg-neutral-900">
                 <div class="window-button close-btn"></div>
                 <div class="window-button minimize-btn"></div>
@@ -642,8 +626,8 @@
                             <button type="submit"
                                 class="w-full py-3 px-6 bg-primary text-white rounded-md hover:bg-opacity-90 transition-all shadow-md transform transition-transform lg:hover:scale-105"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M2.01 21L23 12 2.01 3 2 9l15 3-15 3 2 15z"/>
-                                  </svg>
-                                J'envoie</button>
+                                </svg>J'envoie
+                            </button>
                         </form>
                     </div> -->
                     <div class="md:w-1/2">
@@ -663,9 +647,7 @@
                                     <div>
                                         <h4
                                             class="dark:text-gray-50 font-medium transform transition-transform md:hover:scale-110">
-                                            Mon
-                                            e-mail est <span
-                                                class="hover:text-blue-500 lg:hover:font-bold transition-transform lg:hover:scale-130">miklgaillard@gmail.com</span>
+                                            Mon e-mail est <span class="hover:text-blue-500 lg:hover:font-bold transition-transform lg:hover:scale-130">miklgaillard@gmail.com</span>
                                         </h4>
                                     </div>
                                 </div>
@@ -680,10 +662,7 @@
                                     <div>
                                         <h4
                                             class="dark:text-gray-50 font-medium font-medium transform transition-transform lg:hover:scale-110">
-                                            Mon téléphone est <span
-                                                class="hover:text-blue-500 lg:hover:font-bold transition-transform lg:hover:scale-130">+33
-                                                6 89
-                                                28 67 40</span>
+                                            Mon téléphone est <span class="hover:text-blue-500 lg:hover:font-bold transition-transform lg:hover:scale-130">+33 6 89 28 67 40</span>
                                         </h4>
                                     </div>
                                 </div>
@@ -707,16 +686,16 @@
                             <h3 class="text-xl font-semibold mb-4 md:mb-6 mt-8 lg:mt-12 text-primary text-center">
                                 Réseaux</h3>
                             <div class="flex items-center justify-center space-x-9 mb-6">
-                                <a href="https://www.linkedin.com/in/mikl5/" target="_blank"
-                                    class="text-gray-600 dark:text-gray-300 hover:fill-blue-500 hover:text-blue-500 transition-colors  font-medium transform transition-transform lg:hover:scale-150">
+                                <a target="_blank" href="https://www.linkedin.com/in/mikl5/"
+                                    class="text-black dark:text-white hover:text-blue-500 dark:hover:text-blue-500 transition-colors font-medium transform transition-transform lg:hover:scale-[3]">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                         viewBox="0 0 24 24">
                                         <path
                                             d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" />
                                     </svg>
                                 </a>
-                                <a href="https://github.com/mikl5/" target="_blank"
-                                    class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors font-medium transform transition-transform lg:hover:scale-150">
+                                <a target="_blank" href="https://github.com/mikl5/"
+                                    class="text-black dark:text-white hover:text-black dark:hover:text-white transition-colors font-medium transform transition-transform lg:hover:scale-[3]">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                         viewBox="0 0 24 24">
                                         <path
@@ -734,8 +713,8 @@
     </div>
 
     <!-- Mobile Theme Toggle -->
-    <div class="md:hidden fixed top-4 right-4 z-50">
-        <div id="mobile-theme-toggle" class="theme-switch light-mode bg-gray-300 dark:bg-gray-900 opacity-50">
+        <div class="md:hidden fixed top-4 right-4 z-50">
+        <div id="mobile-theme-toggle" class="theme-switch light-mode bg-gray-300 opacity-50 z-50">
             <div class="switch-handle"></div>
         </div>
     </div>

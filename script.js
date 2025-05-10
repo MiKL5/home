@@ -1,4 +1,4 @@
-// Dark Mode Detection
+// Dark Mode Detection (déjà présent, mais inclus pour référence)
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.documentElement.classList.add('dark');
 }
@@ -10,7 +10,38 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
     }
 });
 
-// Intersection Observer for revealing sections
+// Function to update the window shadow
+function updateWindowShadow() {
+    const macosWindows = document.querySelectorAll('.macos-window');
+    const isDarkMode = document.documentElement.classList.contains('dark');
+
+    macosWindows.forEach(window => {
+        if (isDarkMode) {
+            window.style.boxShadow = '0px 10px 50px rgba(0, 0, 0, .9)'; // Dark shadow
+        } else {
+            window.style.boxShadow = '0px 10px 50px rgba(255, 255, 255, .5)'; // Light shadow
+        }
+    });
+}
+
+// Initial shadow update
+updateWindowShadow();
+
+// Theme toggle
+const themeToggle = document.getElementById('theme-toggle');
+const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+
+function toggleTheme() {
+    document.documentElement.classList.toggle('dark');
+    themeToggle.classList.toggle('dark-mode');
+    mobileThemeToggle.classList.toggle('dark-mode');
+    updateWindowShadow(); // Update shadow on theme toggle
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+mobileThemeToggle.addEventListener('click', toggleTheme);
+
+// Intersection Observer for revealing sections (inchangé)
 const sections = document.querySelectorAll('.section');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -24,20 +55,7 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Theme toggle
-const themeToggle = document.getElementById('theme-toggle');
-const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-
-function toggleTheme() {
-    document.documentElement.classList.toggle('dark');
-    themeToggle.classList.toggle('dark-mode');
-    mobileThemeToggle.classList.toggle('dark-mode');
-}
-
-themeToggle.addEventListener('click', toggleTheme);
-mobileThemeToggle.addEventListener('click', toggleTheme);
-
-// Dock hover effect
+// Dock hover effect (inchangé)
 const dockIcons = document.querySelectorAll('.dock-icon');
 
 dockIcons.forEach(icon => {
@@ -49,7 +67,7 @@ dockIcons.forEach(icon => {
     });
 });
 
-// Form submit handling
+// Form submit handling (inchangé)
 const contactForm = document.querySelector('form');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
