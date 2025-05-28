@@ -2,111 +2,88 @@
 <html lang="fr">
 
 <head>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content; Content-Security-Policy: script-src 'sha256-{HASHED_SCRIPT}' 'strict-dynamic';">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Mickael Gaillard, étudiant en MBA Big Data me spécialisant en analyse de données et IA. Découvrez mes projets DataViz et solutions d'ingénierie des données">
+    <meta name="description"
+        content="Portfolio de Mickael Gaillard, étudiant en MBA Big Data me spécialisant en analyse de données et IA. Découvrez mes projets DataViz et solutions d'ingénierie des données">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
     <title>Portfolio de Mickael GAILLARD</title>
+
+    <!-- <style>
+
+        /* Dock position desktop */
+        /* @media (min-width: 1024px) {
+            .dock-icon:hover {
+                transform: scale(1.3) translateX(5px);
+            } */
+    </style> -->
 </head>
 
 <body class="bg-macos-bg dark:bg-macos-dark-bg">
-    <!-- Dark Mode Detection -->
-    <script>
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-        }
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            if (event.matches) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        });
-    </script>
-
     <!-- All rights reserved -->
     <div class="fixed bottom-[75px] left-0 right-0 text-center text-white">
-        <div>
-            © 2025 Mickael GAILLARD. Tous droits réservés.
-        </div>
+        <div>© 2025 Mickael GAILLARD. Tous droits réservés.</div>
     </div>
 
-    <!-- Dock Navigation (Mobile at the Bottom) -->
-    <div class="sm:flex md:flex md:bottom-0 md:fixed md:left-0 md:right-0 lg:hidden fixed bottom-0 left-0 right-0 backdrop-blur-md z-50 flex justify-center" role="navigation" aria-label="Navigation principale">
-        <div class="dock-container px-2 py-3 bg-white/00 dark:bg-black/00 backdrop-blur-md rounded-2xl shadow-lg">
-            <a href="#home" class="dock-icon p-1 mx-2" aria-label="Accueil">
-                <svg class="w-10 h-10 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+    <!-- Dock navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 backdrop-blur-lg z-50 flex justify-center" role="navigation"
+        aria-label="Navigation principale">
+        <div class="dock-container px-2 py-3 bg-white/0 dark:bg-black/0 backdrop-blur-md rounded-2xl flex items-center">
+            <a href="#home" class="dock-icon p-1 mx-2 w-10 h-10" aria-label="Accueil">
+                <svg class="text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"></path>
                 </svg>
             </a>
-            <a href="#about" class="dock-icon p-1 mx-2" aria-label="À propos de moi">
-                <svg class="w-10 h-10 text-gray-400 dark:text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+            <a href="#about" class="dock-icon p-1 mx-2 w-10 h-10" aria-label="À propos de moi">
+                <svg class="text-emerald-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
+                    </path>
                 </svg>
             </a>
-            <a href="#skills" class="dock-icon p-1 mx-2 w-10 h-10 text-golden" aria-label="Les compétences">
-                <img class="text-golden" src="assets/icons/mortarboard.svg" alt="Les compétences" type="image/svg+xml">
-            </a>
-            <a href="#projects" class="dock-icon p-1 mx-2 w-10 h-10" aria-label="Les projets">
-                <img src="assets/icons/project.svg" alt="Les projets" type="image/svg+xml">
-            </a>
-            <a href="#contact" class="dock-icon p-1 mx-2" aria-label="Me contacter">
-                <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+            <a href="#skills" class="dock-icon p-1 mx-2 w-10 h-10" aria-label="Les compétences">
+                <svg class="text-golden" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z">
+                    </path>
                 </svg>
             </a>
-        </div>
-    </div>
-
-    <!-- Dock Navigation (Desktop - Left center) -->
-    <div class="hidden lg:flex desktop-dock bg-blur-3xl bg-opacity-50" role="navigation" aria-label="Navigation principale">
-        <div class="flex-1"></div>
-        <div class="dock-container mx-auto bg-white/30 dark:bg-black/30 backdrop-blur-md rounded-2xl shadow-lg py-3 my-4">
-            <a href="#home" class="dock-icon p-1 my-2" aria-label="Accueil">
-                <svg class="w-10 h-10 text-gray-900 dark:text-gray-50" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"></path>
+            <!-- <a href="#projects" class="dock-icon p-1 mx-2 w-10 h-10" aria-label="Les projets">
+                <svg class="text-amber" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M22 9V7h-2V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2v-2h-2V9h2zm-4 10H4V5h14v14zM6 13h5v4H6zm6-6h4v3h-4zm-6 0h5v5H6z">
+                    </path>
+                </svg>
+            </a> -->
+            <a href="#contact" class="dock-icon p-1 mx-2 w-10 h-10" aria-label="Me contacter">
+                <svg class="text-primary" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                    </path>
                 </svg>
             </a>
-            <a href="#about" class="dock-icon p-1 my-2 text-emerald-500" aria-label="À propos de moi">
-                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
-                </svg>
-            </a>
-            <a href="#skills" class="dock-icon p-1 my-2 w-10 h-10" aria-label="Les compétences">
-                <img class="text-golden" src="assets/icons/mortarboard.svg" alt="Les compétences" type="image/svg+xml">
-            </a>
-            <a href="#projects" class="dock-icon p-1 my-2 w-10 h-10" aria-label="Les projets">
-                <img src="assets/icons/project.svg" alt="Les projets" type="image/svg+xml">
-            </a>
-            <a href="#contact" class="dock-icon p-1 my-2" aria-label="Me contacter">
-                <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+            <!-- Separator -->
+            <div class="mx-2 border-l border-emerald-350 h-8"></div>
+            <!-- Navigation menu -->
+            <a href="#more" class="dock-icon p-1 mx-2" id="menu-toggle-btn" aria-label="menu de navigation">
+                <svg class="text-white w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
                 </svg>
             </a>
         </div>
-        <!-- Centrer à gauche -->
-        <div class="flex-1 flex flex-col justify-end p-3 mb-6"></div>
-    </div>
-
-
-    <!-- Toggle switch light/dark mmode -->
-    <div id="theme-toggle" class="theme-switch light-mode bg-opacity-90 z-50 opacity-90">
-        <div class="theme-switch light-mode bg-gray-300 dark:bg-gray-700" role="switch" aria-label="Basculer du clair au sombre et vice versa" aria-checked="false">
-            <div class="switch-handle"></div>
-        </div>
-    </div>
-
-</div>
-
+    </nav>
 
     <!-- Main Content -->
     <div class="main-content pb-20 md:pb-6">
-        <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center p-4">
+
+        <!-- Home section -->
+        <section id="home" class="section min-h-screen flex items-center justify-center p-4">
             <div
-                class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-85 transition-opacity duration-500 hover:opacity-100 max-w-4xl w-full">
+                class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-70 transition-opacity duration-300 hover:opacity-100 max-w-4xl w-full">
                 <div class="window-header bg-neutral-200 dark:bg-neutral-900">
                     <div class="window-button close-btn" aria-label="Fermer"></div>
                     <div class="window-button minimize-btn" aria-label="Minimiser"></div>
@@ -114,16 +91,26 @@
                 </div>
                 <div class="p-8 md:p-12">
                     <div class="flex flex-col md:flex-row items-center">
-                        <div class="<!--md:w-1/2--> mb-10 md:mb-0">
-                            <h1 class="text-3xl md:text-5xl font-bold mb-6 text-black dark:text-white text-center">Bonjour, je suis <span class="text-teal-500">Mickael Gaillard</span></h1>
-                            <h2 class="text-2xl md:text-3xl text-center text-golden dark:text-amber mb-6">Actuellement en MBA Big Data chez My Digital School, je recherche une alternance pour septembre</h2>
-                            <p class="text-lg text-justify text-black dark:text-white mb-5">Passionné par le Big Data et l'IA, j'aspire à travailler dans la Data. Mon expérience en développement et avec à divers projets d'analyse de données, m'ont appris à utiliser SQL, T-SQL (automatiservia les procédures stockées et les triggers), Power BI (pour nettoyer les données et créer des dashboards), Python et les bases de données NoSQL.</p>
-                            <p class="text-lg text-justify text-black dark:text-white mb-10">Mes projets sur GitHub et l'alternance que je recherche me permettront de développer davantage ma capacité à transformer les données en solutions innovantes et à contribuer activement à l'essor de l'IA et de l'ingénierie des données.</p>
+                        <div class="mb-10 md:mb-0">
+                            <h1 class="text-2xl md:text-4xl font-bold mb-6 text-black dark:text-white text-center">
+                                Bonjour, je suis<span class="text-teal-600"> Mickael Gaillard</span></h1>
+                            <h2 class="text-2xl md:text-3xl text-center text-amber mb-6">Actuellement
+                                en MBA Big Data chez My Digital School, je recherche une alternance pour septembre</h2>
+                            <p class="text-lg text-justify text-black dark:text-white mb-5">Passionné par le Big Data et
+                                l'IA, j'aspire à travailler dans la Data. Mon expérience en développement et avec à
+                                divers projets d'analyse de données, m'ont appris à utiliser SQL, T-SQL (automatiservia
+                                les procédures stockées et les triggers), Power BI et les langages DAX et M (pour
+                                nettoyer les données et créer des insights), Python et les bases de données NoSQL.</p>
+                            <p class="text-lg text-justify text-black dark:text-white mb-10">Mes projets sur GitHub et
+                                l'alternance que je recherche me permettront de développer davantage ma capacité à
+                                transformer les données en solutions innovantes et à contribuer activement à l'essor de
+                                l'IA et de l'ingénierie des données.</p>
 
                             <div class="flex justify-center space-x-4 md:space-x-8 lg:space-x-10">
-                                <a href="#contact" class="px-6 py-3 bg-teal-500 text-white rounded-xl" aria-label="Me contacter">Me contacter</a>
-                                <!-- <a href="#projects" class="px-6 py-3 bg-orange-400 rounded-xl hover:bg-orange-400 transition-all text-white">Mes réalisations</a> -->
-                                <a target="_blank" href="https://github.com/MiKL5/" class="px-6 py-3 bg-slate-600 text-white rounded-xl" aria-label="Voir mes réalisations">Voir mes réalisations</a>
+                                <a href="#contact" class="px-6 py-3 bg-teal-600 text-white rounded-xl"
+                                    aria-label="Me contacter">Me contacter</a>
+                                <a href="https://github.com/MiKL5/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-slate-600 text-white rounded-xl" aria-label="Voir mes réalisations">Voir mes réalisations</a>
+
                             </div>
                         </div>
                     </div>
@@ -131,296 +118,445 @@
             </div>
         </section>
 
-    <!-- About Section -->
-    <section id="about" class="min-h-screen flex items-center justify-center p-4 section">
-        <div class="macos-window bg-macos-window dark:bg-macos-dark-window max-w-4xl w-full lg:opacity-85 transition-opacity duration-500 hover:opacity-100 shadow-2xl">
-            <div class="window-header bg-neutral-200 dark:bg-neutral-900">
-                <div class="window-button close-btn"></div>
-                <div class="window-button minimize-btn"></div>
-                <div class="window-button maximize-btn"></div>
-            </div>
-            <div class="p-8 md:p-12">
-            <h2 class="text-3xl font-bold mb-10 text-emerald-500 text-center font-weight-900">Qui suis-je ?</h2>
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 pr-0 md:pr-8 mb-8 md:mb-0 dark:text-gray-100 text-justify">
-                    <h3 class="text-xl text-center font-semibold mb-4 text-emerald-500 font-weight-700">Mon parcours</h3>
-                    <p class="mb-3">Actuellement en MBA Big Data pour la rentrée de septembre au rythme d'1 semaine à l’école / 2 en entreprise. Je suis à la recherche d’une alternance orientée analyse de données ou développement IA. Mon parcours mêle programmation dont Python, data visualisation (Power BI), bases de données (SQL, T-SQL et NoSQL), et traitement de données avec Python (Pandas, Numpy).</p>
-                    <p class="mb-3">Je consolide mes compétences techniques via des projets concrets notamment en data analyse.</p>
-                    <p>Curieux, rigoureux et autonome, je souhaite développer mes compétences en entreprise en contribuant activement à des projets data concrets.</p>
+        <!-- About section -->
+        <section id="about" class="section min-h-screen flex items-center justify-center p-4">
+            <div
+                class="macos-window bg-macos-window dark:bg-macos-dark-window max-w-4xl w-full lg:opacity-70 transition-opacity duration-500 hover:opacity-100 shadow-2xl">
+                <div class="window-header bg-neutral-200 dark:bg-neutral-900">
+                    <div class="window-button close-btn"></div>
+                    <div class="window-button minimize-btn"></div>
+                    <div class="window-button maximize-btn"></div>
                 </div>
-
-                    <div class="md:w-1/2 pl-0 md:pl-8 border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-700 pt-8 md:pt-0">
-                        <h3 class="text-xl text-center font-semibold mb-4 text-emerald-500 font-weight-700">Formation</h3>
-                        <div class="mb-6">
-                            <div class="flex justify-between">
-                                <h4 class="font-medium dark:text-white">Marketing digital, copywriting</h4>
-                                <span class="text-gray-800 dark:text-gray-300">2025</span>
-                            </div>
-                            <p class="text-gray-800 dark:text-gray-300">LiveMentor</p>
+                <div class="p-8 md:p-12">
+                    <h2 class="text-3xl font-bold mb-10 text-emerald-500 text-center font-weight-900">Qui suis-je ?</h2>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 pr-0 md:pr-8 mb-8 md:mb-0 dark:text-gray-100 text-justify">
+                            <h3 class="text-xl text-center font-semibold mb-4 text-emerald-500 font-weight-700">Mon
+                                parcours</h3>
+                            <p class="mb-3">Actuellement en MBA Big Data pour la rentrée de septembre au rythme d'1
+                                semaine à l'école / 2 en entreprise. Je suis à la recherche d'une alternance orientée
+                                analyse de données et/ou développement IA. Mon parcours mêle programmation dont Python,
+                                data visualisation (Power BI), bases de données (SQL, T-SQL et NoSQL), et traitement de
+                                données avec Python (Pandas, Numpy).</p>
+                            <p class="mb-3">Je consolide mes compétences techniques via des projets concrets notamment
+                                en data analyse.</p>
+                            <p>Curieux, rigoureux et autonome, je souhaite développer mes compétences en entreprise en
+                                contribuant activement à des projets data concrets.</p>
                         </div>
-                        <div class="mb-6">
-                            <div class="flex justify-between">
-                                <h4 class="font-medium dark:text-white">MongoDB, PostgreSQL et SEO</h4>
-                                <span class="text-gray-800 dark:text-gray-300">2024</span>
-                            </div>
-                            <p class="text-gray-800 dark:text-gray-300">Udemy</p>
-                        </div>
-                        <div class="mb-6">
-                            <div class="flex justify-between">
-                                <h4 class="font-medium dark:text-white">Concepteur Développeur d'Applis</h4>
-                                <span class="text-gray-800 dark:text-gray-300">2022-23</span>
-                            </div>
-                            <p class="text-gray-800 dark:text-gray-300">AFPA</p>
-                        </div>
-                        <div class="mb-6">
-                            <div class="flex justify-between">
-                                <h4 class="font-medium dark:text-white">Développement Full-stack</h4>
-                                <span class="text-gray-800 dark:text-gray-300">2018-21</span>
-                            </div>
-                            <p class="text-gray-600 dark:text-gray-300">AFPA</p>
-                        </div>
-                        <div class="mb-6">
-                            <div class="flex justify-between">
-                                <h4 class="font-medium dark:text-white">Cybersécurité</h4>
-                                <span class="text-gray-800 dark:text-gray-300">2018-22</span>
-                            </div>
-                            <p class="text-gray-800 dark:text-gray-300">Udemy</p>
-                        </div>
-                        <div>
-                            <div class="flex justify-between">
-                                <h4 class="font-medium dark:text-white">Préparation d'un BTS SIO SLAM</h4>
-                                <span class="text-gray-800 dark:text-gray-300">2020-22</span>
-                            </div>
-                            <p class="text-gray-800 dark:text-gray-300">CNED</p>
-                        </div>
-                    </div>
 
-                </div>
-                <!-- CV -->
-                <div class="flex justify-center mt-8 space-x-4 md:space-x-8 lg:space-x-10">
-                    <a rel="noopener noreferrer" href="static/20250508.pdf" class="px-6 py-3 rounded-full transition-all text-gray-50 transition-transform transform lg:hover:scale-150 flex items-center justify-center" aria-label="Télécharger le CV en format PDF">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="Icône de fichier PDF pour télécharger le CV" class="w-12 h-12">
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="min-h-screen flex items-center justify-center p-4 section">
-        <div
-            class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-85 transition-opacity duration-500 hover:opacity-100 max-w-4xl w-full shadow-2xl">
-            <div class="window-header bg-neutral-200 dark:bg-neutral-900">
-                <div class="window-button close-btn"></div>
-                <div class="window-button minimize-btn"></div>
-                <div class="window-button maximize-btn"></div>
-            </div>
-            <div class="p-8 md:p-12">
-                <h2 class="text-3xl font-bold mb-10 text-golden text-center font-weight-900">Mes compétences</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div
-                        class="bg-gray-200 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform transition-all lg:hover:scale-110">
-                        <div class="flex items-center mb-4">
-                            <div class="text-blue-500 mr-3 flex-shrink-0" aria-label="Icône d'analyse de données de transformation et visualisation">
-                                <img src="assets/icons/analysisTools.png" alt="Analyse de données et visualisation" class="h-8 w-8">
-                            </div>
-                            <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Transformer les données en décisions</h3>
-                        </div>
-                        <p class="text-center text-gray-600 dark:text-gray-300 mb-4 whitespace-normal">
-                            Power BI, DAX, Excel, Google Sheets<br><i>Préparation, nettoyage, visualisation, exploration des données</i>
-                        </p>
-                    </div>
-
-                    <div class="bg-gray-200 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform transition-all lg:hover:scale-110">
-                        <div class="flex items-center mb-4">
-                            <div class="text-orange-500 mr-3 flex-shrink-0" aria-label="Icône de gestion et modélisation de bases de données">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-10 h-10">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6c0-1.105 3.134-2 7-2s7 .895 7 2-3.134 2-7 2-7-.895-7-2zM4 6v12c0 1.105 3.134 2 7 2s7-.895 7-2V6m0 4c0 1.105-3.134 2-7 2s-7-.895-7-2m14 4c0 1.105-3.134 2-7 2s-7-.895-7-2" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Gestion et modélisation de bases de données</h3>
-                        </div>
-                        <p class="text-center text-gray-600 dark:text-gray-300 mb-4 whitespace-normal">
-                            SQL, Transact-SQL, NoSQL,<br>SQL Server, PostgreSQL, MariaDB, MySQL et MongoDB
-                        </p>
-                    </div>
-
-
-                    <div class="bg-gray-200 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform transition-all lg:hover:scale-110">
-                        <div class="flex items-center mb-4">
-                            <div class="text-blue-700 mr-3 flex-shrink-0" aria-label="Icône de programmation Data">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1105.18 782.64" class="w-10 h-10">
-                                    <text fill="#3354a1" font-family="monospace" font-size="720" y="602.64" x="0">&lt;/&gt;</text>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Programmation Data</h3>
-                        </div>
-                        <p class="text-center text-gray-600 dark:text-gray-300 mb-4 whitespace-normal">Python, Pandas, Numpy, Keras</p>
-                    </div>
-
-                    <div class="bg-gray-200 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform transition-all lg:hover:scale-110">
-                        <div class="flex items-center mb-4">
-                            <div class="text-green-500 mr-3 flex-shrink-0" aria-label="Icône d'outils de développement">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                        d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Outils de développement</h3>
-                        </div>
-                        <p class="text-center text-gray-600 dark:text-gray-300 mb-4 whitespace-normal">Visual Studio Code, PyCharm,<br>Jupyter Notebook, Google Colab</p>
-                    </div>
-
-
-                    <div class="bg-gray-200 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform transition-all lg:hover:scale-110">
-                        <div class="flex items-center mb-4">
-                            <div class="text-pink-600 mr-3 flex-shrink-0" aria-label="Icône d'outils de gestion de projet et de collaboration'">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Outils de gestion de projet et de collaboration</h3>
-                        </div>
-                        <p class="text-center text-gray-600 dark:text-gray-300 mb-4 whitespace-normal">Evernote, Xmind, Notion, Trello, Adobe Express, Figma, Adobe XD</p>
-                    </div>
-
-
-                    <!-- <div
-                        class="bg-gray-50 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform lg:hover:scale-110">
-                        <div class="flex items-center mb-4">
-                            <div class="text-red-500 mr-3" align="center">
-                                <svg xmlns="http://www.w3.org/2000/svg" version="1.0" class="h-8 w-8"
-                                    viewBox="0 0 877.000000 1280.000000" preserveAspectRatio="xMidYMid meet">
-                                    <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
-                                        fill="#ef4444" stroke="none">
-                                        <path
-                                            d="M4115 12785 c-659 -72 -1254 -378 -1775 -911 -310 -318 -530 -633 -745 -1069 -329 -667 -501 -1379 -522 -2158 l-6 -239 -26 -10 c-240 -98 -472 -258 -624 -432 -231 -265 -363 -559 -406 -906 -8 -57 -11 -746 -11 -2090 0 -2181 -1 -2123 56 -2378 81 -363 250 -703 508 -1026 97 -122 337 -365 463 -468 654 -540 1524 -902 2493 -1037 320 -45 480 -55 865 -55 385 0 545 10 865 55 969 135 1839 497 2493 1037 126 103 366 346 463 468 258 323 427 663 508 1026 57 255 56 197 56 2378 0 1344 -3 2033 -11 2090 -43 347 -175 641 -406 906 -152 174 -384 334 -624 432 l-26 10 -6 239 c-15 565 -111 1096 -290 1608 -151 433 -378 871 -627 1210 -219 299 -515 595 -805 805 -550 398 -1224 584 -1860 515z m582 -1544 c392 -83 720 -294 994 -638 208 -261 392 -636 495 -1012 85 -309 129 -595 142 -920 l7 -161 -1950 0 -1950 0 7 161 c22 547 142 1046 353 1474 321 651 796 1033 1385 1115 109 15 411 4 517 -19z m-105 -5116 c383 -67 704 -297 887 -637 85 -156 124 -287 143 -477 42 -416 -147 -840 -489 -1097 l-73 -55 0 -570 0 -569 -675 0 -675 0 0 569 0 570 -73 55 c-489 368 -636 1037 -346 1574 181 337 501 568 881 637 100 18 317 18 420 0z" />
-                                    </g>
-                                </svg>
-
-                            </div>
-                            <h3 class="text-xl font-semibold dark:text-gray-100 text-center">Sécurité, éthique &
-                                gouvernance des données</h3>
-                        </div>
-                        <p class="text-center text-gray-600 dark:text-gray-300 mb-4">
-                            Ingénierie sociale, sécurité web, tests d'intrusion<br>
-                            RGPD, IA responsable, écoconception
-                        </p>
-                    </div> -->
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="min-h-screen flex items-center justify-center p-4 section">
-        <div class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-85 transition-opacity duration-500 hover:opacity-100 max-w-4xl w-full shadow-2xl">
-            <div class="window-header bg-neutral-200 dark:bg-neutral-900">
-                <div class="window-button close-btn"></div>
-                <div class="window-button minimize-btn"></div>
-                <div class="window-button maximize-btn"></div>
-            </div>
-            <div class="p-8 md:p-12">
-                <h2 id="projects" class="text-orange-400 text-3xl font-bold mb-10 text-center font-weight-900">Mes réalisations</h2>
-                <p class="text-gray-900 dark:text-gray-50 text-center italic font-semmibold">Prochainement ...</p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-36">
-                    <!-- Projects -->
-    </div>
-    </div>
-    </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="min-h-screen flex items-center justify-center p-4 section">
-        <div
-            class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-85 transition-opacity duration-500 hover:opacity-100 max-w-4xl w-full shadow-2xl">
-            <div class="window-header bg-neutral-200 dark:bg-neutral-900">
-                <div class="window-button close-btn"></div>
-                <div class="window-button minimize-btn"></div>
-                <div class="window-button maximize-btn"></div>
-            </div>
-            <div class="p-10 md:p-12">
-                <h2 class="text-3xl font-bold mb-10 text-center text-primary font-weight-900">Me contacter</h2>
-                <div class="flex flex-col md:flex-row gap-4 justify-center">
-                    <!-- <div class="md:w-1/2">
-                        <form class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
+                        <div
+                            class="md:w-1/2 pl-0 md:pl-8 border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-700 pt-8 md:pt-0">
+                            <h3 class="text-xl text-center font-semibold mb-4 text-emerald-500 font-weight-700">
+                                Formation</h3>
                             <div class="mb-6">
-                                <label for="name"
-                                    class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Prénom
-                                    et
-                                    Nom</label>
-                                <input type="text" id="name"
-                                    class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 text-base focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transform transition-transform lg:hover:scale-105"
-                                    placeholder="Vos prénom et nom">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium dark:text-white">Marketing digital, copywriting</h4>
+                                    <span class="text-gray-800 dark:text-gray-300 text-right">2025</span>
+                                </div>
+                                <p class="text-gray-800 dark:text-gray-300">Live Mentor</p>
                             </div>
                             <div class="mb-6">
-                                <label for="email"
-                                    class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-                                <input type="email" id="email"
-                                    class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 text-base focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transform transition-transform lg:hover:scale-105"
-                                    placeholder="votre.email@exemple.com">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium dark:text-white">MongoDB, PostgreSQL et SEO</h4>
+                                    <span class="text-gray-800 dark:text-gray-300 text-right">2024</span>
+                                </div>
+                                <p class="text-gray-800 dark:text-gray-300">Udemy</p>
                             </div>
                             <div class="mb-6">
-                                <label for="message"
-                                    class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
-                                <textarea id="message" rows="5"
-                                    class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 text-base focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transform transition-transform lg:hover:scale-105"
-                                    placeholder="Votre message..."></textarea>
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium dark:text-white">Concepteur Développeur d'Applis</h4>
+                                    <span class="text-gray-800 dark:text-gray-300 text-right">2022-23</span>
+                                </div>
+                                <p class="text-gray-800 dark:text-gray-300">AFPA</p>
                             </div>
-                            <button type="submit"
-                                class="w-full py-3 px-6 bg-primary text-white rounded-md hover:bg-opacity-90 transition-all shadow-md transform transition-transform lg:hover:scale-105"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M2.01 21L23 12 2.01 3 2 9l15 3-15 3 2 15z"/>
-                                </svg>J'envoie
-                            </button>
-                        </form>
-                    </div> -->
-                    <div class="md:w-1/2">
-                        <div class="bg-gray-200 dark:bg-gray-900 p-4 rounded-lg h-full">
-                            <h3 class="text-xl font-semibold mb-6 md:mb-8 md:mt-4 text-emerald-400 text-center">
-                                Informations de contact
-                            </h3>
-                            <div class="space-y-6">
-                                <div class="flex items-start justify-center">
-                                    <div class="text-blue-500 mr-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            <div class="mb-6">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium dark:text-white">Développement Full-stack</h4>
+                                    <span class="text-gray-800 dark:text-gray-300 text-right">2018-21</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300">AFPA</p>
+                            </div>
+                            <div class="mb-6">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium dark:text-white">Cybersécurité</h4>
+                                    <span class="text-gray-800 dark:text-gray-300 text-right">2018-22</span>
+                                </div>
+                                <p class="text-gray-800 dark:text-gray-300">Udemy</p>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium dark:text-white">Préparation d'un BTS SIO SLAM</h4>
+                                    <span class="text-gray-800 dark:text-gray-300 text-right">2020-22</span>
+                                </div>
+                                <p class="text-gray-800 dark:text-gray-300">CNED</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CV -->
+                    <div class="flex justify-center mt-8 space-x-4 md:space-x-8 lg:space-x-10">
+                        <a href="#" rel="noopener noreferrer"
+                            class="px-6 py-3 rounded-full transition-all text-gray-50 transition-transform transform lg:hover:scale-150 flex items-center justify-center"
+                            aria-label="Télécharger le CV en format PDF">
+                            <img width="36px" src="assets/icons/pdf.svg" alt="Télécharger le CV en format PDF">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills section -->
+        <section id="skills" class="section min-h-screen flex items-center justify-center p-4">
+            <div
+                class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-70 transition-opacity duration-300 hover:opacity-100 max-w-4xl w-full">
+                <div class="window-header bg-neutral-200 dark:bg-neutral-900">
+                    <div class="window-button close-btn"></div>
+                    <div class="window-button minimize-btn"></div>
+                    <div class="window-button maximize-btn"></div>
+                </div>
+                <div class="p-8 md:p-12">
+                    <h2 class="text-3xl font-bold mb-10 text-golden text-center font-weight-900">Mes compétences</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div
+                            class="bg-gray-200 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform transition-all lg:hover:scale-110">
+                            <div class="flex items-center mb-4">
+                                <div class="text-blue-500 mr-3 flex-shrink-0"
+                                    aria-label="Icône d'analyse de données de transformation et visualisation">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Transformer
+                                    les données en décisions</h3>
+                            </div>
+                            <p class="text-center text-gray-600 dark:text-gray-300 mb-4 whitespace-normal">
+                                Power BI, DAX, Excel, Google Sheets,<br><i>Préparation, nettoyage, visualisation,
+                                    exploration des données</i>
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-gray-200 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform transition-all lg:hover:scale-110">
+                            <div class="flex items-center mb-4">
+                                <div class="text-orange-500 mr-3 flex-shrink-0"
+                                    aria-label="Icône de gestion et modélisation de bases de données">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" class="w-10 h-10">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 6c0-1.105 3.134-2 7-2s7 .895 7 2-3.134 2-7 2-7-.895-7-2zM4 6v12c0 1.105 3.134 2 7 2s7-.895 7-2V6m0 4c0 1.105-3.134 2-7 2s-7-.895-7-2m14 4c0 1.105-3.134 2-7 2s-7-.895-7-2">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Gestion et
+                                    modélisation de bases de données</h3>
+                            </div>
+                            <p class="text-center text-gray-600 dark:text-gray-300 mb-4 whitespace-normal">
+                                SQL, Transact-SQL, NoSQL,<br>SQL Server, PostgreSQL, MariaDB, MySQL et MongoDB
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-gray-200 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform transition-all lg:hover:scale-110">
+                            <div class="flex items-center mb-4">
+                                <div class="text-blue-700 mr-3 flex-shrink-0" aria-label="Icône de programmation Data">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 4L4 9l5 5M14 4l5 5-5 5"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Programmation
+                                    Data</h3>
+                            </div>
+                            <p class="text-center text-gray-600 dark:text-gray-300 mb-4 whitespace-normal">Python, M,
+                                DAX, Pandas, Numpy, Keras</p>
+                        </div>
+
+                        <div
+                            class="bg-gray-200 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform transition-all lg:hover:scale-110">
+                            <div class="flex items-center mb-4">
+                                <div class="text-green-500 mr-3 flex-shrink-0"
+                                    aria-label="Icône d'outils de développement">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Outils de
+                                    développement</h3>
+                            </div>
+                            <p class="text-center text-gray-600 dark:text-gray-300 mb-4 whitespace-normal">Visual Studio
+                                Code, PyCharm,<br>Jupyter Notebook, Google Colab</p>
+                        </div>
+
+                        <div
+                            class="bg-gray-200 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform transition-all lg:hover:scale-110">
+                            <div class="flex items-center mb-4">
+                                <div class="text-pink-600 mr-3 flex-shrink-0"
+                                    aria-label="Icône d'outils de gestion de projet et de collaboration'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">Outils de
+                                    gestion de projet et de collaboration</h3>
+                            </div>
+                            <p class="text-center text-gray-600 dark:text-gray-300 mb-4 whitespace-normal">Evernote,
+                                Xmind, Notion, Trello, Adobe Express, Figma, Adobe XD</p>
+                        </div>
+
+
+                        <div
+                            class="bg-gray-200 dark:bg-gray-900 p-6 rounded-3xl transition-colors font-medium transform transition-transform lg:hover:scale-110">
+                            <div class="flex items-center mb-4">
+                                <div class="text-red-500 mr-3" align="center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold dark:text-gray-100 text-center flex-grow">
+                                    Sécurité</h3>
+                            </div>
+                            <p class="text-center text-gray-600 dark:text-gray-300 mb-4">
+                                Ingénierie sociale, sécurité web<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <!-- <section id="projects" class="section flex items-center justify-center p-4">
+            <div
+                class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-70 transition-opacity duration-300 hover:opacity-100 max-w-4xl w-full">
+                <div class="window-header bg-neutral-200 dark:bg-neutral-900">
+                    <div class="window-button close-btn"></div>
+                    <div class="window-button minimize-btn"></div>
+                    <div class="window-button maximize-btn"></div>
+                </div>
+                <div class="p-8 md:p-12">
+                    <h2 class="text-orange-400 text-3xl font-bold mb-10 text-center font-weight-900">Mes réalisations</h2>
+                    <div class="flex flex-col items-center space-y-6"> -->
+                        <!-- Projects -->
+                        <!-- <p class="text-gray-900 dark:text-gray-50 text-center italic font-semibold mb-0">Trés bientôt...</p> -->
+                        <!-- Barre de séparation -->
+                        <!-- <hr class="my-4 border-gray-300 dark:border-gray-600 w-full">
+                        <div class="flex flex-col items-center"> -->
+                            <!-- Profil Github -->
+                            <!-- <a rel="noopener noreferrer" target="_blank" href="https://github.com/mikl5/"
+                                aria-label="Lien vers le profil GitHub de Mickael GAILLARD"
+                                class="github-link text-black dark:text-white hover:text-white  transition-colors font-medium transform transition-transform lg:hover:scale-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="section min-h-screen flex items-center justify-center p-4">
+            <div
+                class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-70 transition-opacity duration-300 hover:opacity-100 max-w-4xl w-full">
+                <div class="window-header bg-neutral-200 dark:bg-neutral-900">
+                    <div class="window-button close-btn"></div>
+                    <div class="window-button minimize-btn"></div>
+                    <div class="window-button maximize-btn"></div>
+                </div>
+                <div class="p-10 md:p-12">
+                    <h2 class="text-3xl font-bold mb-10 text-center text-primary font-weight-900">Me contacter</h2>
+                    <div class="flex flex-col md:flex-row gap-8 justify-center">                        
+                            <div class="bg-gray-200 dark:bg-gray-900 p-6 rounded-lg h-full">
+                                <div class="space-y-6">
+                                    <div class="text-center dark:text-white">
+                                        <p>Je suis conscient que votre temps est précieux. La sécurité et l'éthique me
+                                            tiennent à cœur.</p><br>
+                                        <p>C'est pourquoi, je vous invite à me contacter via mon profil LinkedIn, pour
+                                            garantir un échange sécurisé et professionnel ainsi qu'une bonne gestion de
+                                            nos données personnelles.</p><br>
+                                        <p>Si mon profil vous intéresse, n'hésitez pas à me rejoindre ci-après. Ce sera
+                                            un plaisir d'échanger avec vous.</p>
                                     </div>
-                                    <div>
-                                        <h4 class="<!-- dark:text-gray-50 font-medium transform transition-all hover:text-blue-600-->">
-                                            <a href="mailto:miklgaillard+portfolio@gmail.com" class="hover:text-blue-600 hover:font-bold transition-all hover:scale-110 inline-block" aria-label="Envoyer un e-mail à Mickaël Gaillard">Me contacter par e-mail</a>
-                                        </h4>
+                                    <!-- Barre de séparation -->
+                                    <hr class="my-4 border-gray-300 dark:border-gray-600">
+                                    <div class="flex items-center justify-center space-x-9 mb-6">
+                                        <!-- LinkedIn -->
+                                        <a rel="noopener noreferrer" target="_blank"
+                                            href="https://www.linkedin.com/in/mikl5/" alt="Visitez mon profil Linked In"
+                                            aria-label="Lien vers le profil Linked In de Mickael Gaillard"
+                                            class="linkedin-link text-black dark:text-white hover:text-blue-500 dark:hover:text-blue-500 transition-colors font-medium transform transition-transform lg:hover:scale-150">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z">
+                                                </path>
+                                            </svg>
+                                        </a>
                                     </div>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-semibold mb-4 md:mb-6 mt-8 lg:mt-12 text-emerald-400 text-center">Réseaux</h3>
-                            <div class="flex items-center justify-center space-x-9 mb-6">
-                                <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/mikl5/" alt="Visitez mon profil Linked In" aria-label="Lien vers le profil Linked In de Mickael Gaillard" class="linkedin-link text-black dark:text-white hover:text-blue-500 dark:hover:text-blue-500 transition-colors font-medium transform transition-transform lg:hover:scale-[3]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                        viewBox="0 0 24 24"> <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" /></svg>
-                                </a>
-                                <a rel="noopener noreferrer" target="_blank" href="https://github.com/mikl5/" alt="Visitez mon profil GitHub" aria-label="Lien vers le profil GitHub de Mickael Gaillard" class="github-link text-black dark:text-white hover:text-black dark:hover:text-white transition-colors font-medium transform transition-transform lg:hover:scale-[3]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                        viewBox="0 0 24 24"> <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
-                                </a>
-                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section id="privacy-policy" class="section min-h-screen flex items-center justify-center p-4 hidden">
+            <div
+                class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-85 transition-opacity duration-500 hover:opacity-100 max-w-4xl w-full shadow-2xl">
+                <div class="window-header bg-neutral-200 dark:bg-neutral-900">
+                    <div class="window-button close-btn"></div>
+                    <div class="window-button minimize-btn"></div>
+                    <div class="window-button maximize-btn"></div>
+                </div>
+                <div class="p-8 md:p-12">
+                    <h2 class="text-3xl font-bold mb-6 text-primary text-center">Politique de confidentialité</h2>
+                    <div class="space-y-4 text-gray-800 dark:text-gray-200">
+                        <p>Cette politique de confidentialité s'applique au site web portfolio de Mickael Gaillard.</p>
+
+                        <h3 class="text-xl font-semibold mt-6 mb-2">1. Collecte des données personnelles</h3>
+                        <p>Je collecte les informations suivantes lorsque vous remplissez le formulaire de contact :</p>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Nom et prénom</li>
+                            <li>Fonction</li>
+                            <li>Adresse e-mail</li>
+                            <li>Contenu du message</li>
+                        </ul>
+
+                        <h3 class="text-xl font-semibold mt-6 mb-2">2. Utilisation des données</h3>
+                        <p>Les données que vous me fournissez sont utilisées uniquement pour :</p>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Vous contacter en réponse à votre message</li>
+                            <li>Répondre à vos questions et demandes</li>
+                        </ul>
+
+                        <h3 class="text-xl font-semibold mt-6 mb-2">3. Conservation des données</h3>
+                        <p>Vos données sont conservées pour une durée de 3 ans maximum à compter de notre dernier
+                            contact.</p>
+
+                        <h3 class="text-xl font-semibold mt-6 mb-2">4. Sécurité des données</h3>
+                        <p>Je m'engage à protéger la sécurité de vos informations personnelles et j'utilise des
+                            technologies de sécurisation pour protéger vos données contre tout accès non autorisé,
+                            utilisation inappropriée ou divulgation.</p>
+
+                        <h3 class="text-xl font-semibold mt-6 mb-2">5. Vos droits</h3>
+                        <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des
+                            droits suivants concernant vos données personnelles :</p>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Droit d'accès</li>
+                            <li>Droit de rectification</li>
+                            <li>Droit à l'effacement</li>
+                            <li>Droit à la limitation du traitement</li>
+                            <li>Droit à la portabilité des données</li>
+                            <li>Droit d'opposition</li>
+                        </ul>
+
+                        <h3 class="text-xl font-semibold mt-6 mb-2">6. Contact</h3>
+                        <p>Pour exercer vos droits ou pour toute question relative à cette politique de confidentialité,
+                            vous pouvez me contacter à l'adresse e-mail suivante : miklgaillard+portfolio@gmail.com</p>
+
+                        <h3 class="text-xl font-semibold mt-6 mb-2">7. Mise à jour de la politique</h3>
+                        <p>Cette politique de confidentialité peut être mise à jour occasionnellement. La date de la
+                            dernière mise à jour sera indiquée en bas de cette page.</p>
+
+                        <p class="text-sm mt-8">Dernière mise à jour : 8 mai 2025</p>
+
+                        <div class="flex justify-center mt-8">
+                            <a href="#contact" class="px-6 py-3 bg-primary text-white rounded-xl back-to-main">Me contacter</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- Terms of Use Section -->
+        <section id="mentions-legales" class="section min-h-screen flex items-center justify-center p-4 hidden">
+            <div
+                class="macos-window bg-macos-window dark:bg-macos-dark-window lg:opacity-85 transition-opacity duration-500 hover:opacity-100 max-w-4xl w-full shadow-2xl">
+                <div class="window-header bg-neutral-200 dark:bg-neutral-900">
+                    <div class="window-button close-btn"></div>
+                    <div class="window-button minimize-btn"></div>
+                    <div class="window-button maximize-btn"></div>
+                </div>
+                <div class="p-8 md:p-12">
+                    <h2 class="text-3xl font-bold mb-6 text-primary text-center">Mentions Légales</h2>
+                    <div class="space-y-4 text-gray-800 dark:text-gray-200">
+                        <h3 class="text-xl font-semibold mt-6 mb-2">1. Identité</h3>
+                        <p>Ce site est édité par Mickael Gaillard, domicilié en GitHub page.</p>
+
+                        <h3 class="text-xl font-semibold mt-6 mb-2">2. Hébergement</h3>
+                        <p>Ce site est hébergé par GitHub.</p>
+
+                        <h3 class="text-xl font-semibold mt-6 mb-2">3. Propriété intellectuelle</h3>
+                        <p>Certains éléments de ce site (notament les images) ainsi que le site lui-même, relèvent des
+                            législations françaises et internationales sur le droit d'auteur et la propriété
+                            intellectuelle.</p>
+                        <p>Ces éléments sont la propriété exclusive de Mickael Gaillard.</p>
+
+                        <h3 class="text-xl font-semibold mt-6 mb-2">4. Crédits</h3>
+                        <p>Conception et développement : Mickael Gaillard</p>
+
+                        <div class="flex justify-center mt-8">
+                            <a href="#contact" class="px-6 py-3 bg-primary text-white rounded-xl back-to-main">Me contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- Mobile Theme Toggle -->
-        <div class="md:hidden fixed top-4 right-4 z-50">
-        <div id="mobile-theme-toggle" class="theme-switch light-mode bg-gray-300 opacity-50 z-50">
-            <div class="switch-handle"></div>
+    <!-- Navigation menu -->
+    <div id="navigation-menu"
+        class="hidden fixed inset-0 w-full h-full transition-colors duration-500 ease-in-out bg-yellow-50/75 dark:bg-slate-950/75 backdrop-blur-sm z-[100] flex items-center justify-center">
+
+        <div class="p-6 max-w-md w-full relative">
+            <button id="close-menu" class="absolute top-0 right-0 text-gray-800 dark:text-gray-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Toggle switch light/dark mode en disposition horizontale -->
+            <div class="flex items-center justify-center space-x-6 mb-10 mt-8">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white" id="theme-toggle-text">Assombrir</h2>
+
+                <div id="menu-theme-toggle" class="theme-switch light-mode bg-gray-300 dark:bg-gray-700 scale-125"
+                    role="switch" aria-label="Basculer du clair au sombre et vice versa" aria-checked="false"
+                    tabindex="0">
+                    <div class="switch-handle"></div>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-700 dark:border-yellow-50">
+            <div class="flex flex-col items-center space-y-6">
+                <a href="#privacy-policy" id="show-privacy-btn"
+                    class="text-gray-800 dark:text-white text-lg font-medium hover:underline">Politique de
+                    confidentialité</a>
+                <a href="#mentions-legales" id="show-terms-btn"
+                    class="text-gray-800 dark:text-white text-lg font-medium hover:underline">Mentions légales</a>
+            </div>
         </div>
     </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/script.js"></script>
 </body>
+
+<script src="assets/js/script.js"></script>
 
 </html>
