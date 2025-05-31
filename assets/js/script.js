@@ -311,6 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "SQL": "#ff0000",
                 "TSQL": "#ff0000",
                 "PLSQL": "#ff0000",
+                "NoSQL": "#ff0000",
             };
             
             repos.forEach(repo => {
@@ -480,89 +481,127 @@ document.querySelectorAll('a.dock-icon').forEach(link => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-            // Get DOM elements
-            const searchInput = document.getElementById('search-projects');
-            const filterButtons = document.querySelectorAll('.filter-button');
-            const repoCards = document.querySelectorAll('.repo-card');
-            const noResultsElement = document.getElementById('no-results');
-            const reposGrid = document.getElementById('repositories-grid');
+    // Get DOM elements
+    const searchInput = document.getElementById('search-projects');
+    const searchContainer = document.getElementById('search-container');
+    const searchIcon = document.getElementById('search-icon');
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const repoCards = document.querySelectorAll('.repo-card');
+    const noResultsElement = document.getElementById('no-results');
+    const reposGrid = document.getElementById('repositories-grid');
+    
+    // Search container expand/collapse functionality
+    searchIcon.addEventListener('click', function() {
+        if (!searchContainer.classList.contains('expanded')) {
+            searchContainer.classList.add('expanded');
+            setTimeout(() => {
+                searchInput.focus();
+            }, 300);
+        }
+    });
+
+    // Collapse search when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!searchContainer.contains(e.target) && searchInput.value === '') {
+            searchContainer.classList.remove('expanded');
+        }
+    });
+
+    // Keep expanded if there's text
+    searchInput.addEventListener('blur', function() {
+        if (searchInput.value === '') {
+            setTimeout(() => {
+                searchContainer.classList.remove('expanded');
+            }, 200);
+        }
+    });
+    
+    // Function to filter repositories
+    function filterRepositories() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const activeFilter = document.querySelector('.filter-button.active').getAttribute('data-filter');
+        
+        let visibleCount = 0;
+        
+        // Loop through all repository cards
+        repoCards.forEach(card => {
+            const name = card.getAttribute('data-name').toLowerCase();
+            const keywords = card.getAttribute('data-keywords').toLowerCase();
+            const categories = card.getAttribute('data-categories').toLowerCase().split(' ');
             
-            // Function to filter repositories
-            function filterRepositories() {
-                const searchTerm = searchInput.value.toLowerCase().trim();
-                const activeFilter = document.querySelector('.filter-button.active').getAttribute('data-filter');
+            // Check if card matches search term
+            const matchesSearch = searchTerm === '' || 
+                                  name.includes(searchTerm) || 
+                                  keywords.includes(searchTerm);
+            
+            // Check if card matches active filter
+            const matchesFilter = activeFilter === 'all' || categories.includes(activeFilter);
+            
+            // Show or hide card based on filters
+            if (matchesSearch && matchesFilter) {
+                card.classList.remove('hidden-card');
+                visibleCount++;
                 
-                let visibleCount = 0;
-                
-                // Loop through all repository cards
-                repoCards.forEach(card => {
-                    const name = card.getAttribute('data-name').toLowerCase();
-                    const keywords = card.getAttribute('data-keywords').toLowerCase();
-                    const categories = card.getAttribute('data-categories').toLowerCase().split(' ');
-                    
-                    // Check if card matches search term
-                    const matchesSearch = searchTerm === '' || 
-                                          name.includes(searchTerm) || 
-                                          keywords.includes(searchTerm);
-                    
-                    // Check if card matches active filter
-                    const matchesFilter = activeFilter === 'all' || categories.includes(activeFilter);
-                    
-                    // Show or hide card based on filters
-                    if (matchesSearch && matchesFilter) {
-                        card.classList.remove('hidden-card');
-                        visibleCount++;
-                        
-                        // Add animation class with delay based on index
-                        setTimeout(() => {
-                            card.classList.add('fade-in');
-                        }, 50 * visibleCount);
-                    } else {
-                        card.classList.add('hidden-card');
-                        card.classList.remove('fade-in');
-                    }
-                });
-                
-                // Show or hide "No results" message
-                if (visibleCount === 0) {
-                    noResultsElement.classList.remove('hidden');
-                    noResultsElement.style.display = 'block';
-                } else {
-                    noResultsElement.classList.add('hidden');
-                    noResultsElement.style.display = 'none';
-                }
-                
-                // Adjust grid layout if needed
-                if (visibleCount <= 2) {
-                    reposGrid.classList.remove('lg:grid-cols-3');
-                    reposGrid.classList.add('lg:grid-cols-2');
-                } else {
-                    reposGrid.classList.remove('lg:grid-cols-2');
-                    reposGrid.classList.add('lg:grid-cols-3');
-                }
+                // Add animation class with delay based on index
+                setTimeout(() => {
+                    card.classList.add('fade-in');
+                }, 50 * visibleCount);
+            } else {
+                card.classList.add('hidden-card');
+                card.classList.remove('fade-in');
             }
+        });
+        
+        // Show or hide "No results" message
+        if (visibleCount === 0) {
+            noResultsElement.classList.remove('hidden');
+            noResultsElement.style.display = 'block';
+        } else {
+            noResultsElement.classList.add('hidden');
+            noResultsElement.style.display = 'none';
+        }
+        
+        // Adjust grid layout if needed
+        if (visibleCount <= 2) {
+            reposGrid.classList.remove('lg:grid-cols-3');
+            reposGrid.classList.add('lg:grid-cols-2');
+        } else {
+            reposGrid.classList.remove('lg:grid-cols-2');
+            reposGrid.classList.add('lg:grid-cols-3');
+        }
+    }
+    
+    // Add event listener for search input with debounce
+    let debounceTimer;
+    searchInput.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(filterRepositories, 300);
+    });
+    
+    // Add event listeners for filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
             
-            // Add event listener for search input with debounce
-            let debounceTimer;
-            searchInput.addEventListener('input', function() {
-                clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(filterRepositories, 300);
-            });
+            // Add active class to clicked button
+            this.classList.add('active');
             
-            // Add event listeners for filter buttons
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // Filter repositories
-                    filterRepositories();
-                });
-            });
-            
-            // Initial filtering
+            // Filter repositories
             filterRepositories();
         });
+    });
+    
+    // Initial filtering
+    filterRepositories();
+});
+
+// const disableEffectsBtn = document.getElementById('disable-effects-btn');
+
+// disableEffectsBtn.addEventListener('click', () => {
+//     document.body.classList.toggle('no-effects');
+//     const effectsOff = document.body.classList.contains('no-effects');
+
+//     // Update button text
+//     disableEffectsBtn.textContent = effectsOff ? 'Réactiver les effets visuels' : 'Désactiver les effets visuels';
+// });
