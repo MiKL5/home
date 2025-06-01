@@ -13,6 +13,7 @@
 ._style.css
 ._tailwind.config.js
 .vscode/._settings.json
+.vscode/settings.json
 assets/._css
 assets/._icons
 assets/._favicon.png
