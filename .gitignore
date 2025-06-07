@@ -18,8 +18,9 @@ assets/._css
 assets/._icons
 assets/._favicon.png
 assets/._js
+assets/css/._print.css
 assets/css/._styles.css
-assets/icons/._analysisTools.png
+assets/icons/._analysisTools.webp
 assets/icons/._cadenas.svg
 assets/icons/._mortarboard.svg
 assets/icons/._pgrm.svg
@@ -30,4 +31,4 @@ assets/icons/._more.svg
 assets/icons/._pdf.svg
 assets/images/._background.jpg
 static/._mickael_gaillard_cv.pdf
-index.html
+
