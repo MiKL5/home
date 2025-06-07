@@ -7,13 +7,10 @@ Le dock est en bas de tous les écrans. Il y a 7 rubriques :
 * 🎓 Formations (diplômes et certifications) ;
 * 💼 Les projets ;
 * 📬 Contact ;
-* Les 2 autres sont accessibles par le menu option <b><kbd>⋮</kbd></b>.
-___
-* Le dock à 6 icones
-    * La sixième icone, <b><kbd>⋮</kbd></b> :
-        * 🌗 Un switch pour basculer du clair au sombre.
-        * 🛡️ La politique de confidentialité
-        * ⚖️ L'accès aux mentions légales
+* 3 options sont accessibles par le menu option <b><kbd>⋮</kbd></b> :
+    * 🌗 Un switch pour basculer du clair au sombre.
+    * 🛡️ La politique de confidentialité
+    * ⚖️ L'accès aux mentions légales
 ## **🛠️ Technologies utilisées**
 * **CSS** pour le style.
 * **JavaScript** pour l'interactivité et fonctionnalités dynamiques.
