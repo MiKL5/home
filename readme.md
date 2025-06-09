@@ -2,9 +2,9 @@
 
 ## **🧭 La navigation**
 Le dock est en bas de tous les écrans. Il y a 7 rubriques :
-* 🏠 Accueil (Une brève introduction sur moi-même et mes aspirations professionnelles.) ;
-* 👤 Présentation (parcours, compétences, ...) ;
-* 🎓 Formations (diplômes et certifications) ;
+* 🏠 Accueil ;
+* 👤 Présentation ;
+* 🎓 Formation ;
 * 💼 Les projets ;
 * 📬 Contact ;
 * 3 options sont accessibles par le menu option <b><kbd>⋮</kbd></b> :
