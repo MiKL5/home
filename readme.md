@@ -17,6 +17,6 @@ Le dock est en bas de tous les écrans. Il y a 7 rubriques :
 * **Tailwind CSS** est un framework CSS pour un design moderne et responsive.
 * **Git** pour la gestion de version et déploiement du code.
 ___
-## **⚠️ Certaines parties - _dont le fond d'écran et l'icône_ - sont protégées par le droit d'auteur**
 <div align="center">
+<h2><b>⚠️ Certaines parties - <i>dont le fond d'écran et l'icône</i> - sont protégées par le droit d'auteur</b></h2>
 © 2025 Mickael GAILLARD. Tous droits réservés.
