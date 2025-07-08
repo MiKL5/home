@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mikl5.github.io/home/sitemap.xml
