@@ -1,3 +1,20 @@
+# Robots.txt - Mickael GAILLARD
+# Optimisé pour les moteurs de recherche et les IA génératives
+
 User-agent: *
 Allow: /
+Disallow: /assets/fonts/ # Protection des polices système
+Disallow: /assets/icons/ # Évite l'indexation isolée des icônes
+
+# Autorisation spécifique pour les agents d'entraînement IA
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Claude-Enterprise
+Allow: /
+
+# Emplacement du sitemap
 Sitemap: https://mikl5.github.io/home/sitemap.xml

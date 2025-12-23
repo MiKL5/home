@@ -1,5 +1,4 @@
 # **Portfolio**<a href="#"><img src="assets/images/background.webp" alt="Portfolio de Mickael GAILLARD" align="right" height="64px"></a></h1>
-
 ## **🧭 Navigation**
 Le dock est en bas de tous les écrans. Il y a 7 rubriques :
 * 🏠 Accueil ;
@@ -22,17 +21,20 @@ Le dock est en bas de tous les écrans. Il y a 7 rubriques :
 * **Images optimisées** (WebP, SVG, PNG).
 * **Accessibilité** : balises ARIA, <!--navigation clavier, -->contrastes adaptés.
 * **SEO** : balises meta, Open Graph, canonical, favicon.
+<!-- ### **🧠 Intelligence Sémantique & IA-Ready**
+* **JSON-LD (Schema.org)** : Implémentation de métadonnées structurées (`Person`, `Skill`, `SoftwareSourceCode`) pour une indexation par les IA génératives (SGE) et les moteurs de recherche.
+* **Architecture Ontologique** ➔ Utilisation stricte des balises HTML5 (`header`, `article`, `nav`, `section`, `time`) pour définir le sens des données. -->
+### **♿ Accessibilité (A11y)**
+* **Standard WCAG** ➔ Respect des contrastes, navigation au clavier, et gestion du focus.
+* **Attributs ARIA** ➔ Utilisation des rôles `dialog`, `switch`, `list` et des tags `aria-current` pour une expérience inclusive.
 ## **🔒 Sécurité & confidentialité**
-* Aucune donnée personnelle collectée par le site.
-* Pas de cookies de tracking ni d’analyse tiers.
-* Liens externes (LinkedIn, e-mail) soumis à leur propre politique de confidentialité.
-* Politique de confidentialité et mentions légales accessibles via le menu.
+* **Privacy by Design** ➔ ni donnée personnelle collectée, ni de cookies de tracking ni d’analyse tiers.
+* **Conformité RGPD** ➔ Politique de confidentialité explicite et transparente.
 ## **🌱 Sobriété numérique**
 * Design minimaliste et ressources optimisées pour réduire l’empreinte carbone.
 * Badge EcoIndex A.
-___
 
-<div align="center">
+<hr><div align="center">
 <h2><b>⚠️ Certaines parties - <i>dont le fond d'écran et l'icône</i> - sont protégées par le droit d'auteur</b></h2>
 © 2025 Mickael GAILLARD. Tous droits réservés.<br>
-<h3><b>Toute reproduction, même partielle, est interdite.
+<h3><b>Toute reproduction, <i>même partielle (code, assets visuels, icônes)</i>, est strictement interdite.</b></h3></div>
