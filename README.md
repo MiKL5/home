@@ -33,6 +33,6 @@ Le dock est en bas de tous les écrans. Il y a 7 rubriques :
 * Badge EcoIndex A.
 
 <hr><div align="center">
-<h2><b>⚠️ Certaines parties - <i>dont le fond d'écran et l'icône</i> - sont protégées par le droit d'auteur</b></h2>
+<h2><b>⚠️ Certaines parties - <i>dont le fond d'écran et la favicône</i> - sont protégées par le droit d'auteur</b></h2>
 © 2026 Mickael GAILLARD. Tous droits réservés.<br>
 <h3><b>Toute reproduction, <i>même partielle (code, assets visuels, icônes)</i>, est strictement interdite.</b></h3></div>
