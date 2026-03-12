@@ -17,8 +17,9 @@
 ._src
 ._style.css
 ._tailwind.config.js
-.vscode/._settings.json
-.vscode/settings.json._package-lock.json
+.DS_Store
+.idea/
+.vscode/
 assets/._css
 assets/._icons
 assets/._favicon.png
@@ -44,7 +45,6 @@ package.json
 assets/icons/.DS_Store
 assets/.DS_Store
 static/.DS_Store
-.DS_Store
 src/input.css
 assets/css/input.css
 assets/icons/b2m256.png
