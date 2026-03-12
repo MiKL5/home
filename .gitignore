@@ -17,8 +17,8 @@
 ._src
 ._style.css
 ._tailwind.config.js
-.vscode/._settings.json
-.vscode/settings.json._package-lock.json
+.idea/
+.vscode/
 assets/._css
 assets/._icons
 assets/._favicon.png
