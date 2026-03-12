@@ -17,6 +17,7 @@
 ._src
 ._style.css
 ._tailwind.config.js
+.DS_Store
 .idea/
 .vscode/
 assets/._css
@@ -37,14 +38,11 @@ assets/icons/._pdf.svg
 assets/images/._background.jpg
 assets/icons/ozr
 ozr/
-static/._mickael_gaillard_cv.pdf
+assets/.DS_Store
+assets/icons/.DS_Store
+assets/icons/b2m256.png
 node_modules/
 package-lock.json
 package.json
-assets/icons/.DS_Store
-assets/.DS_Store
-static/.DS_Store
-.DS_Store
 src/input.css
 assets/css/input.css
-assets/icons/b2m256.png
